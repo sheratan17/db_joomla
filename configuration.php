@@ -14,9 +14,9 @@ class JConfig {
         public $debug_lang_const = true;
         public $dbtype = 'mysqli';
         public $host = 'localhost';
-        public $user = '';
-        public $password = '';
-        public $db = '';
+        public $user =
+        public $password =
+        public $db =
         public $dbprefix = 'ljjbw_';
         public $dbencryption = 0;
         public $dbsslverifyservercert = false;
@@ -26,7 +26,7 @@ class JConfig {
         public $dbsslcipher = '';
         public $force_ssl = 0;
         public $live_site = '';
-        public $secret = '';
+        public $secret =
         public $gzip = false;
         public $error_reporting = 'default';
         public $helpurl = 'https://help.joomla.org/proxy?keyref=Help{major}{minor}:{keyref}&lang={langcode}';
