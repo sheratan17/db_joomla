@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Feb 27, 2023 at 02:49 AM
+-- Generation Time: Feb 27, 2023 at 04:29 AM
 -- Server version: 10.6.12-MariaDB-0ubuntu0.22.04.1
 -- PHP Version: 8.1.2-1ubuntu2.10
 
@@ -24,10 +24,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ljjbw_action_logs`
+-- Table structure for table `twp7l_action_logs`
 --
 
-CREATE TABLE `ljjbw_action_logs` (
+CREATE TABLE `twp7l_action_logs` (
   `id` int(10) UNSIGNED NOT NULL,
   `message_language_key` varchar(255) NOT NULL DEFAULT '',
   `message` text NOT NULL,
@@ -38,22 +38,31 @@ CREATE TABLE `ljjbw_action_logs` (
   `ip_address` varchar(40) NOT NULL DEFAULT '0.0.0.0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `twp7l_action_logs`
+--
+
+INSERT INTO `twp7l_action_logs` (`id`, `message_language_key`, `message`, `log_date`, `extension`, `user_id`, `item_id`, `ip_address`) VALUES
+(1, 'PLG_ACTIONLOG_JOOMLA_USER_LOGIN_FAILED', '{\"action\":\"login\",\"id\":593,\"userid\":593,\"username\":\"administrator\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=593\",\"app\":\"PLG_ACTIONLOG_JOOMLA_APPLICATION_SITE\"}', '2023-02-27 04:14:28', 'com_users', 593, 593, 'COM_ACTIONLOGS_DISABLED'),
+(2, 'PLG_ACTIONLOG_JOOMLA_USER_LOGGED_IN', '{\"action\":\"login\",\"userid\":593,\"username\":\"administrator\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=593\",\"app\":\"PLG_ACTIONLOG_JOOMLA_APPLICATION_SITE\"}', '2023-02-27 04:14:42', 'com_users', 593, 0, 'COM_ACTIONLOGS_DISABLED'),
+(3, 'PLG_ACTIONLOG_JOOMLA_USER_LOGGED_IN', '{\"action\":\"login\",\"userid\":593,\"username\":\"administrator\",\"accountlink\":\"index.php?option=com_users&task=user.edit&id=593\",\"app\":\"PLG_ACTIONLOG_JOOMLA_APPLICATION_ADMINISTRATOR\"}', '2023-02-27 04:14:58', 'com_users', 593, 0, 'COM_ACTIONLOGS_DISABLED');
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ljjbw_action_logs_extensions`
+-- Table structure for table `twp7l_action_logs_extensions`
 --
 
-CREATE TABLE `ljjbw_action_logs_extensions` (
+CREATE TABLE `twp7l_action_logs_extensions` (
   `id` int(10) UNSIGNED NOT NULL,
   `extension` varchar(255) NOT NULL DEFAULT ''
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `ljjbw_action_logs_extensions`
+-- Dumping data for table `twp7l_action_logs_extensions`
 --
 
-INSERT INTO `ljjbw_action_logs_extensions` (`id`, `extension`) VALUES
+INSERT INTO `twp7l_action_logs_extensions` (`id`, `extension`) VALUES
 (1, 'com_banners'),
 (2, 'com_cache'),
 (3, 'com_categories'),
@@ -77,10 +86,10 @@ INSERT INTO `ljjbw_action_logs_extensions` (`id`, `extension`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ljjbw_action_logs_users`
+-- Table structure for table `twp7l_action_logs_users`
 --
 
-CREATE TABLE `ljjbw_action_logs_users` (
+CREATE TABLE `twp7l_action_logs_users` (
   `user_id` int(10) UNSIGNED NOT NULL,
   `notify` tinyint(3) UNSIGNED NOT NULL,
   `extensions` text NOT NULL
@@ -89,10 +98,10 @@ CREATE TABLE `ljjbw_action_logs_users` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ljjbw_action_log_config`
+-- Table structure for table `twp7l_action_log_config`
 --
 
-CREATE TABLE `ljjbw_action_log_config` (
+CREATE TABLE `twp7l_action_log_config` (
   `id` int(10) UNSIGNED NOT NULL,
   `type_title` varchar(255) NOT NULL DEFAULT '',
   `type_alias` varchar(255) NOT NULL DEFAULT '',
@@ -103,10 +112,10 @@ CREATE TABLE `ljjbw_action_log_config` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `ljjbw_action_log_config`
+-- Dumping data for table `twp7l_action_log_config`
 --
 
-INSERT INTO `ljjbw_action_log_config` (`id`, `type_title`, `type_alias`, `id_holder`, `title_holder`, `table_name`, `text_prefix`) VALUES
+INSERT INTO `twp7l_action_log_config` (`id`, `type_title`, `type_alias`, `id_holder`, `title_holder`, `table_name`, `text_prefix`) VALUES
 (1, 'article', 'com_content.article', 'id', 'title', '#__content', 'PLG_ACTIONLOG_JOOMLA'),
 (2, 'article', 'com_content.form', 'id', 'title', '#__content', 'PLG_ACTIONLOG_JOOMLA'),
 (3, 'banner', 'com_banners.banner', 'id', 'name', '#__banners', 'PLG_ACTIONLOG_JOOMLA'),
@@ -131,10 +140,10 @@ INSERT INTO `ljjbw_action_log_config` (`id`, `type_title`, `type_alias`, `id_hol
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ljjbw_assets`
+-- Table structure for table `twp7l_assets`
 --
 
-CREATE TABLE `ljjbw_assets` (
+CREATE TABLE `twp7l_assets` (
   `id` int(10) UNSIGNED NOT NULL COMMENT 'Primary Key',
   `parent_id` int(11) NOT NULL DEFAULT 0 COMMENT 'Nested set parent.',
   `lft` int(11) NOT NULL DEFAULT 0 COMMENT 'Nested set lft.',
@@ -146,10 +155,10 @@ CREATE TABLE `ljjbw_assets` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `ljjbw_assets`
+-- Dumping data for table `twp7l_assets`
 --
 
-INSERT INTO `ljjbw_assets` (`id`, `parent_id`, `lft`, `rgt`, `level`, `name`, `title`, `rules`) VALUES
+INSERT INTO `twp7l_assets` (`id`, `parent_id`, `lft`, `rgt`, `level`, `name`, `title`, `rules`) VALUES
 (1, 0, 0, 165, 0, 'root.1', 'Root Asset', '{\"core.login.site\":{\"6\":1,\"2\":1},\"core.login.admin\":{\"6\":1},\"core.login.api\":{\"8\":1},\"core.login.offline\":{\"6\":1},\"core.admin\":{\"8\":1},\"core.manage\":{\"7\":1},\"core.create\":{\"6\":1,\"3\":1},\"core.delete\":{\"6\":1},\"core.edit\":{\"6\":1,\"4\":1},\"core.edit.state\":{\"6\":1,\"5\":1},\"core.edit.own\":{\"6\":1,\"3\":1}}'),
 (2, 1, 1, 2, 1, 'com_admin', 'com_admin', '{}'),
 (3, 1, 3, 6, 1, 'com_banners', 'com_banners', '{\"core.admin\":{\"7\":1},\"core.manage\":{\"6\":1}}'),
@@ -237,10 +246,10 @@ INSERT INTO `ljjbw_assets` (`id`, `parent_id`, `lft`, `rgt`, `level`, `name`, `t
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ljjbw_associations`
+-- Table structure for table `twp7l_associations`
 --
 
-CREATE TABLE `ljjbw_associations` (
+CREATE TABLE `twp7l_associations` (
   `id` int(11) NOT NULL COMMENT 'A reference to the associated item.',
   `context` varchar(50) NOT NULL COMMENT 'The context of the associated item.',
   `key` char(32) NOT NULL COMMENT 'The key for the association computed from an md5 on associated ids.'
@@ -249,10 +258,10 @@ CREATE TABLE `ljjbw_associations` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ljjbw_banners`
+-- Table structure for table `twp7l_banners`
 --
 
-CREATE TABLE `ljjbw_banners` (
+CREATE TABLE `twp7l_banners` (
   `id` int(11) NOT NULL,
   `cid` int(11) NOT NULL DEFAULT 0,
   `type` int(11) NOT NULL DEFAULT 0,
@@ -292,10 +301,10 @@ CREATE TABLE `ljjbw_banners` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ljjbw_banner_clients`
+-- Table structure for table `twp7l_banner_clients`
 --
 
-CREATE TABLE `ljjbw_banner_clients` (
+CREATE TABLE `twp7l_banner_clients` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL DEFAULT '',
   `contact` varchar(255) NOT NULL DEFAULT '',
@@ -315,10 +324,10 @@ CREATE TABLE `ljjbw_banner_clients` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ljjbw_banner_tracks`
+-- Table structure for table `twp7l_banner_tracks`
 --
 
-CREATE TABLE `ljjbw_banner_tracks` (
+CREATE TABLE `twp7l_banner_tracks` (
   `track_date` datetime NOT NULL,
   `track_type` int(10) UNSIGNED NOT NULL,
   `banner_id` int(10) UNSIGNED NOT NULL,
@@ -328,10 +337,10 @@ CREATE TABLE `ljjbw_banner_tracks` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ljjbw_categories`
+-- Table structure for table `twp7l_categories`
 --
 
-CREATE TABLE `ljjbw_categories` (
+CREATE TABLE `twp7l_categories` (
   `id` int(11) NOT NULL,
   `asset_id` int(10) UNSIGNED NOT NULL DEFAULT 0 COMMENT 'FK to the #__assets table.',
   `parent_id` int(10) UNSIGNED NOT NULL DEFAULT 0,
@@ -362,24 +371,24 @@ CREATE TABLE `ljjbw_categories` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `ljjbw_categories`
+-- Dumping data for table `twp7l_categories`
 --
 
-INSERT INTO `ljjbw_categories` (`id`, `asset_id`, `parent_id`, `lft`, `rgt`, `level`, `path`, `extension`, `title`, `alias`, `note`, `description`, `published`, `checked_out`, `checked_out_time`, `access`, `params`, `metadesc`, `metakey`, `metadata`, `created_user_id`, `created_time`, `modified_user_id`, `modified_time`, `hits`, `language`, `version`) VALUES
-(1, 0, 0, 0, 11, 0, '', 'system', 'ROOT', 'root', '', '', 1, NULL, NULL, 1, '{}', '', '', '{}', 485, '2023-02-27 02:34:16', 485, '2023-02-27 02:34:16', 0, '*', 1),
-(2, 27, 1, 1, 2, 1, 'uncategorised', 'com_content', 'Uncategorised', 'uncategorised', '', '', 1, NULL, NULL, 1, '{\"category_layout\":\"\",\"image\":\"\",\"workflow_id\":\"use_default\"}', '', '', '{\"author\":\"\",\"robots\":\"\"}', 485, '2023-02-27 02:34:16', 485, '2023-02-27 02:34:16', 0, '*', 1),
-(3, 28, 1, 3, 4, 1, 'uncategorised', 'com_banners', 'Uncategorised', 'uncategorised', '', '', 1, NULL, NULL, 1, '{\"category_layout\":\"\",\"image\":\"\"}', '', '', '{\"author\":\"\",\"robots\":\"\"}', 485, '2023-02-27 02:34:16', 485, '2023-02-27 02:34:16', 0, '*', 1),
-(4, 29, 1, 5, 6, 1, 'uncategorised', 'com_contact', 'Uncategorised', 'uncategorised', '', '', 1, NULL, NULL, 1, '{\"category_layout\":\"\",\"image\":\"\"}', '', '', '{\"author\":\"\",\"robots\":\"\"}', 485, '2023-02-27 02:34:16', 485, '2023-02-27 02:34:16', 0, '*', 1),
-(5, 30, 1, 7, 8, 1, 'uncategorised', 'com_newsfeeds', 'Uncategorised', 'uncategorised', '', '', 1, NULL, NULL, 1, '{\"category_layout\":\"\",\"image\":\"\"}', '', '', '{\"author\":\"\",\"robots\":\"\"}', 485, '2023-02-27 02:34:16', 485, '2023-02-27 02:34:16', 0, '*', 1),
-(7, 32, 1, 9, 10, 1, 'uncategorised', 'com_users', 'Uncategorised', 'uncategorised', '', '', 1, NULL, NULL, 1, '{\"category_layout\":\"\",\"image\":\"\"}', '', '', '{\"author\":\"\",\"robots\":\"\"}', 485, '2023-02-27 02:34:16', 485, '2023-02-27 02:34:16', 0, '*', 1);
+INSERT INTO `twp7l_categories` (`id`, `asset_id`, `parent_id`, `lft`, `rgt`, `level`, `path`, `extension`, `title`, `alias`, `note`, `description`, `published`, `checked_out`, `checked_out_time`, `access`, `params`, `metadesc`, `metakey`, `metadata`, `created_user_id`, `created_time`, `modified_user_id`, `modified_time`, `hits`, `language`, `version`) VALUES
+(1, 0, 0, 0, 11, 0, '', 'system', 'ROOT', 'root', '', '', 1, NULL, NULL, 1, '{}', '', '', '{}', 593, '2023-02-27 04:14:19', 593, '2023-02-27 04:14:19', 0, '*', 1),
+(2, 27, 1, 1, 2, 1, 'uncategorised', 'com_content', 'Uncategorised', 'uncategorised', '', '', 1, NULL, NULL, 1, '{\"category_layout\":\"\",\"image\":\"\",\"workflow_id\":\"use_default\"}', '', '', '{\"author\":\"\",\"robots\":\"\"}', 593, '2023-02-27 04:14:19', 593, '2023-02-27 04:14:19', 0, '*', 1),
+(3, 28, 1, 3, 4, 1, 'uncategorised', 'com_banners', 'Uncategorised', 'uncategorised', '', '', 1, NULL, NULL, 1, '{\"category_layout\":\"\",\"image\":\"\"}', '', '', '{\"author\":\"\",\"robots\":\"\"}', 593, '2023-02-27 04:14:19', 593, '2023-02-27 04:14:19', 0, '*', 1),
+(4, 29, 1, 5, 6, 1, 'uncategorised', 'com_contact', 'Uncategorised', 'uncategorised', '', '', 1, NULL, NULL, 1, '{\"category_layout\":\"\",\"image\":\"\"}', '', '', '{\"author\":\"\",\"robots\":\"\"}', 593, '2023-02-27 04:14:19', 593, '2023-02-27 04:14:19', 0, '*', 1),
+(5, 30, 1, 7, 8, 1, 'uncategorised', 'com_newsfeeds', 'Uncategorised', 'uncategorised', '', '', 1, NULL, NULL, 1, '{\"category_layout\":\"\",\"image\":\"\"}', '', '', '{\"author\":\"\",\"robots\":\"\"}', 593, '2023-02-27 04:14:19', 593, '2023-02-27 04:14:19', 0, '*', 1),
+(7, 32, 1, 9, 10, 1, 'uncategorised', 'com_users', 'Uncategorised', 'uncategorised', '', '', 1, NULL, NULL, 1, '{\"category_layout\":\"\",\"image\":\"\"}', '', '', '{\"author\":\"\",\"robots\":\"\"}', 593, '2023-02-27 04:14:19', 593, '2023-02-27 04:14:19', 0, '*', 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ljjbw_contact_details`
+-- Table structure for table `twp7l_contact_details`
 --
 
-CREATE TABLE `ljjbw_contact_details` (
+CREATE TABLE `twp7l_contact_details` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `alias` varchar(400) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
@@ -427,10 +436,10 @@ CREATE TABLE `ljjbw_contact_details` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ljjbw_content`
+-- Table structure for table `twp7l_content`
 --
 
-CREATE TABLE `ljjbw_content` (
+CREATE TABLE `twp7l_content` (
   `id` int(10) UNSIGNED NOT NULL,
   `asset_id` int(10) UNSIGNED NOT NULL DEFAULT 0 COMMENT 'FK to the #__assets table.',
   `title` varchar(255) NOT NULL DEFAULT '',
@@ -466,10 +475,10 @@ CREATE TABLE `ljjbw_content` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ljjbw_contentitem_tag_map`
+-- Table structure for table `twp7l_contentitem_tag_map`
 --
 
-CREATE TABLE `ljjbw_contentitem_tag_map` (
+CREATE TABLE `twp7l_contentitem_tag_map` (
   `type_alias` varchar(255) NOT NULL DEFAULT '',
   `core_content_id` int(10) UNSIGNED NOT NULL COMMENT 'PK from the core content table',
   `content_item_id` int(11) NOT NULL COMMENT 'PK from the content type table',
@@ -481,10 +490,10 @@ CREATE TABLE `ljjbw_contentitem_tag_map` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ljjbw_content_frontpage`
+-- Table structure for table `twp7l_content_frontpage`
 --
 
-CREATE TABLE `ljjbw_content_frontpage` (
+CREATE TABLE `twp7l_content_frontpage` (
   `content_id` int(11) NOT NULL DEFAULT 0,
   `ordering` int(11) NOT NULL DEFAULT 0,
   `featured_up` datetime DEFAULT NULL,
@@ -494,10 +503,10 @@ CREATE TABLE `ljjbw_content_frontpage` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ljjbw_content_rating`
+-- Table structure for table `twp7l_content_rating`
 --
 
-CREATE TABLE `ljjbw_content_rating` (
+CREATE TABLE `twp7l_content_rating` (
   `content_id` int(11) NOT NULL DEFAULT 0,
   `rating_sum` int(10) UNSIGNED NOT NULL DEFAULT 0,
   `rating_count` int(10) UNSIGNED NOT NULL DEFAULT 0,
@@ -507,10 +516,10 @@ CREATE TABLE `ljjbw_content_rating` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ljjbw_content_types`
+-- Table structure for table `twp7l_content_types`
 --
 
-CREATE TABLE `ljjbw_content_types` (
+CREATE TABLE `twp7l_content_types` (
   `type_id` int(10) UNSIGNED NOT NULL,
   `type_title` varchar(255) NOT NULL DEFAULT '',
   `type_alias` varchar(400) NOT NULL DEFAULT '',
@@ -522,10 +531,10 @@ CREATE TABLE `ljjbw_content_types` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `ljjbw_content_types`
+-- Dumping data for table `twp7l_content_types`
 --
 
-INSERT INTO `ljjbw_content_types` (`type_id`, `type_title`, `type_alias`, `table`, `rules`, `field_mappings`, `router`, `content_history_options`) VALUES
+INSERT INTO `twp7l_content_types` (`type_id`, `type_title`, `type_alias`, `table`, `rules`, `field_mappings`, `router`, `content_history_options`) VALUES
 (1, 'Article', 'com_content.article', '{\"special\":{\"dbtable\":\"#__content\",\"key\":\"id\",\"type\":\"ArticleTable\",\"prefix\":\"Joomla\\\\Component\\\\Content\\\\Administrator\\\\Table\\\\\",\"config\":\"array()\"},\"common\":{\"dbtable\":\"#__ucm_content\",\"key\":\"ucm_id\",\"type\":\"Corecontent\",\"prefix\":\"Joomla\\\\CMS\\\\Table\\\\\",\"config\":\"array()\"}}', '', '{\"common\":{\"core_content_item_id\":\"id\",\"core_title\":\"title\",\"core_state\":\"state\",\"core_alias\":\"alias\",\"core_created_time\":\"created\",\"core_modified_time\":\"modified\",\"core_body\":\"introtext\", \"core_hits\":\"hits\",\"core_publish_up\":\"publish_up\",\"core_publish_down\":\"publish_down\",\"core_access\":\"access\", \"core_params\":\"attribs\", \"core_featured\":\"featured\", \"core_metadata\":\"metadata\", \"core_language\":\"language\", \"core_images\":\"images\", \"core_urls\":\"urls\", \"core_version\":\"version\", \"core_ordering\":\"ordering\", \"core_metakey\":\"metakey\", \"core_metadesc\":\"metadesc\", \"core_catid\":\"catid\", \"asset_id\":\"asset_id\", \"note\":\"note\"}, \"special\":{\"fulltext\":\"fulltext\"}}', 'ContentHelperRoute::getArticleRoute', '{\"formFile\":\"administrator\\/components\\/com_content\\/forms\\/article.xml\", \"hideFields\":[\"asset_id\",\"checked_out\",\"checked_out_time\",\"version\"],\"ignoreChanges\":[\"modified_by\", \"modified\", \"checked_out\", \"checked_out_time\", \"version\", \"hits\", \"ordering\"],\"convertToInt\":[\"publish_up\", \"publish_down\", \"featured\", \"ordering\"],\"displayLookup\":[{\"sourceColumn\":\"catid\",\"targetTable\":\"#__categories\",\"targetColumn\":\"id\",\"displayColumn\":\"title\"},{\"sourceColumn\":\"created_by\",\"targetTable\":\"#__users\",\"targetColumn\":\"id\",\"displayColumn\":\"name\"},{\"sourceColumn\":\"access\",\"targetTable\":\"#__viewlevels\",\"targetColumn\":\"id\",\"displayColumn\":\"title\"},{\"sourceColumn\":\"modified_by\",\"targetTable\":\"#__users\",\"targetColumn\":\"id\",\"displayColumn\":\"name\"} ]}'),
 (2, 'Contact', 'com_contact.contact', '{\"special\":{\"dbtable\":\"#__contact_details\",\"key\":\"id\",\"type\":\"ContactTable\",\"prefix\":\"Joomla\\\\Component\\\\Contact\\\\Administrator\\\\Table\\\\\",\"config\":\"array()\"},\"common\":{\"dbtable\":\"#__ucm_content\",\"key\":\"ucm_id\",\"type\":\"Corecontent\",\"prefix\":\"Joomla\\\\CMS\\\\Table\\\\\",\"config\":\"array()\"}}', '', '{\"common\":{\"core_content_item_id\":\"id\",\"core_title\":\"name\",\"core_state\":\"published\",\"core_alias\":\"alias\",\"core_created_time\":\"created\",\"core_modified_time\":\"modified\",\"core_body\":\"address\", \"core_hits\":\"hits\",\"core_publish_up\":\"publish_up\",\"core_publish_down\":\"publish_down\",\"core_access\":\"access\", \"core_params\":\"params\", \"core_featured\":\"featured\", \"core_metadata\":\"metadata\", \"core_language\":\"language\", \"core_images\":\"image\", \"core_urls\":\"webpage\", \"core_version\":\"version\", \"core_ordering\":\"ordering\", \"core_metakey\":\"metakey\", \"core_metadesc\":\"metadesc\", \"core_catid\":\"catid\", \"asset_id\":\"null\"}, \"special\":{\"con_position\":\"con_position\",\"suburb\":\"suburb\",\"state\":\"state\",\"country\":\"country\",\"postcode\":\"postcode\",\"telephone\":\"telephone\",\"fax\":\"fax\",\"misc\":\"misc\",\"email_to\":\"email_to\",\"default_con\":\"default_con\",\"user_id\":\"user_id\",\"mobile\":\"mobile\",\"sortname1\":\"sortname1\",\"sortname2\":\"sortname2\",\"sortname3\":\"sortname3\"}}', 'ContactHelperRoute::getContactRoute', '{\"formFile\":\"administrator\\/components\\/com_contact\\/forms\\/contact.xml\",\"hideFields\":[\"default_con\",\"checked_out\",\"checked_out_time\",\"version\"],\"ignoreChanges\":[\"modified_by\", \"modified\", \"checked_out\", \"checked_out_time\", \"version\", \"hits\"],\"convertToInt\":[\"publish_up\", \"publish_down\", \"featured\", \"ordering\"], \"displayLookup\":[ {\"sourceColumn\":\"created_by\",\"targetTable\":\"#__users\",\"targetColumn\":\"id\",\"displayColumn\":\"name\"},{\"sourceColumn\":\"catid\",\"targetTable\":\"#__categories\",\"targetColumn\":\"id\",\"displayColumn\":\"title\"},{\"sourceColumn\":\"modified_by\",\"targetTable\":\"#__users\",\"targetColumn\":\"id\",\"displayColumn\":\"name\"},{\"sourceColumn\":\"access\",\"targetTable\":\"#__viewlevels\",\"targetColumn\":\"id\",\"displayColumn\":\"title\"},{\"sourceColumn\":\"user_id\",\"targetTable\":\"#__users\",\"targetColumn\":\"id\",\"displayColumn\":\"name\"} ] }'),
 (3, 'Newsfeed', 'com_newsfeeds.newsfeed', '{\"special\":{\"dbtable\":\"#__newsfeeds\",\"key\":\"id\",\"type\":\"NewsfeedTable\",\"prefix\":\"Joomla\\\\Component\\\\Newsfeeds\\\\Administrator\\\\Table\\\\\",\"config\":\"array()\"},\"common\":{\"dbtable\":\"#__ucm_content\",\"key\":\"ucm_id\",\"type\":\"Corecontent\",\"prefix\":\"Joomla\\\\CMS\\\\Table\\\\\",\"config\":\"array()\"}}', '', '{\"common\":{\"core_content_item_id\":\"id\",\"core_title\":\"name\",\"core_state\":\"published\",\"core_alias\":\"alias\",\"core_created_time\":\"created\",\"core_modified_time\":\"modified\",\"core_body\":\"description\", \"core_hits\":\"hits\",\"core_publish_up\":\"publish_up\",\"core_publish_down\":\"publish_down\",\"core_access\":\"access\", \"core_params\":\"params\", \"core_featured\":\"featured\", \"core_metadata\":\"metadata\", \"core_language\":\"language\", \"core_images\":\"images\", \"core_urls\":\"link\", \"core_version\":\"version\", \"core_ordering\":\"ordering\", \"core_metakey\":\"metakey\", \"core_metadesc\":\"metadesc\", \"core_catid\":\"catid\", \"asset_id\":\"null\"}, \"special\":{\"numarticles\":\"numarticles\",\"cache_time\":\"cache_time\",\"rtl\":\"rtl\"}}', 'NewsfeedsHelperRoute::getNewsfeedRoute', '{\"formFile\":\"administrator\\/components\\/com_newsfeeds\\/forms\\/newsfeed.xml\",\"hideFields\":[\"asset_id\",\"checked_out\",\"checked_out_time\",\"version\"],\"ignoreChanges\":[\"modified_by\", \"modified\", \"checked_out\", \"checked_out_time\", \"version\", \"hits\"],\"convertToInt\":[\"publish_up\", \"publish_down\", \"featured\", \"ordering\"],\"displayLookup\":[{\"sourceColumn\":\"catid\",\"targetTable\":\"#__categories\",\"targetColumn\":\"id\",\"displayColumn\":\"title\"},{\"sourceColumn\":\"created_by\",\"targetTable\":\"#__users\",\"targetColumn\":\"id\",\"displayColumn\":\"name\"},{\"sourceColumn\":\"access\",\"targetTable\":\"#__viewlevels\",\"targetColumn\":\"id\",\"displayColumn\":\"title\"},{\"sourceColumn\":\"modified_by\",\"targetTable\":\"#__users\",\"targetColumn\":\"id\",\"displayColumn\":\"name\"} ]}'),
@@ -543,10 +552,10 @@ INSERT INTO `ljjbw_content_types` (`type_id`, `type_title`, `type_alias`, `table
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ljjbw_extensions`
+-- Table structure for table `twp7l_extensions`
 --
 
-CREATE TABLE `ljjbw_extensions` (
+CREATE TABLE `twp7l_extensions` (
   `extension_id` int(11) NOT NULL,
   `package_id` int(11) NOT NULL DEFAULT 0 COMMENT 'Parent package ID for extensions installed as a package.',
   `name` varchar(100) NOT NULL,
@@ -570,10 +579,10 @@ CREATE TABLE `ljjbw_extensions` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `ljjbw_extensions`
+-- Dumping data for table `twp7l_extensions`
 --
 
-INSERT INTO `ljjbw_extensions` (`extension_id`, `package_id`, `name`, `type`, `element`, `changelogurl`, `folder`, `client_id`, `enabled`, `access`, `protected`, `locked`, `manifest_cache`, `params`, `custom_data`, `checked_out`, `checked_out_time`, `ordering`, `state`, `note`) VALUES
+INSERT INTO `twp7l_extensions` (`extension_id`, `package_id`, `name`, `type`, `element`, `changelogurl`, `folder`, `client_id`, `enabled`, `access`, `protected`, `locked`, `manifest_cache`, `params`, `custom_data`, `checked_out`, `checked_out_time`, `ordering`, `state`, `note`) VALUES
 (1, 0, 'com_wrapper', 'component', 'com_wrapper', NULL, '', 1, 1, 1, 0, 1, '{\"name\":\"com_wrapper\",\"type\":\"component\",\"creationDate\":\"2006-04\",\"author\":\"Joomla! Project\",\"copyright\":\"(C) 2007 Open Source Matters, Inc.\\n\\t\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"www.joomla.org\",\"version\":\"4.0.0\",\"description\":\"COM_WRAPPER_XML_DESCRIPTION\",\"group\":\"\",\"filename\":\"wrapper\"}', '', '', NULL, NULL, 0, 0, NULL),
 (2, 0, 'com_admin', 'component', 'com_admin', NULL, '', 1, 1, 1, 1, 1, '{\"name\":\"com_admin\",\"type\":\"component\",\"creationDate\":\"2006-04\",\"author\":\"Joomla! Project\",\"copyright\":\"(C) 2006 Open Source Matters, Inc.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"www.joomla.org\",\"version\":\"4.0.0\",\"description\":\"COM_ADMIN_XML_DESCRIPTION\",\"group\":\"\"}', '', '', NULL, NULL, 0, 0, NULL),
 (3, 0, 'com_banners', 'component', 'com_banners', NULL, '', 1, 1, 1, 0, 1, '{\"name\":\"com_banners\",\"type\":\"component\",\"creationDate\":\"2006-04\",\"author\":\"Joomla! Project\",\"copyright\":\"(C) 2006 Open Source Matters, Inc.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"www.joomla.org\",\"version\":\"4.0.0\",\"description\":\"COM_BANNERS_XML_DESCRIPTION\",\"group\":\"\",\"filename\":\"banners\"}', '{\"purchase_type\":\"3\",\"track_impressions\":\"0\",\"track_clicks\":\"0\",\"metakey_prefix\":\"\",\"save_history\":\"1\",\"history_limit\":10}', '', NULL, NULL, 0, 0, NULL),
@@ -660,7 +669,7 @@ INSERT INTO `ljjbw_extensions` (`extension_id`, `package_id`, `name`, `type`, `e
 (84, 0, 'mod_privacy_status', 'module', 'mod_privacy_status', NULL, '', 1, 1, 1, 0, 1, '{\"name\":\"mod_privacy_status\",\"type\":\"module\",\"creationDate\":\"2019-07\",\"author\":\"Joomla! Project\",\"copyright\":\"(C) 2019 Open Source Matters, Inc.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"www.joomla.org\",\"version\":\"4.0.0\",\"description\":\"MOD_PRIVACY_STATUS_XML_DESCRIPTION\",\"group\":\"\",\"filename\":\"mod_privacy_status\"}', '{}', '', NULL, NULL, 0, 0, NULL),
 (85, 0, 'plg_actionlog_joomla', 'plugin', 'joomla', NULL, 'actionlog', 0, 1, 1, 0, 1, '{\"name\":\"plg_actionlog_joomla\",\"type\":\"plugin\",\"creationDate\":\"2018-05\",\"author\":\"Joomla! Project\",\"copyright\":\"(C) 2018 Open Source Matters, Inc.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"www.joomla.org\",\"version\":\"3.9.0\",\"description\":\"PLG_ACTIONLOG_JOOMLA_XML_DESCRIPTION\",\"group\":\"\",\"filename\":\"joomla\"}', '{}', '', NULL, NULL, 1, 0, NULL),
 (86, 0, 'plg_api-authentication_basic', 'plugin', 'basic', NULL, 'api-authentication', 0, 0, 1, 0, 1, '{\"name\":\"plg_api-authentication_basic\",\"type\":\"plugin\",\"creationDate\":\"2005-11\",\"author\":\"Joomla! Project\",\"copyright\":\"(C) 2019 Open Source Matters, Inc.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"www.joomla.org\",\"version\":\"4.0.0\",\"description\":\"PLG_API-AUTHENTICATION_BASIC_XML_DESCRIPTION\",\"group\":\"\",\"filename\":\"basic\"}', '{}', '', NULL, NULL, 1, 0, NULL);
-INSERT INTO `ljjbw_extensions` (`extension_id`, `package_id`, `name`, `type`, `element`, `changelogurl`, `folder`, `client_id`, `enabled`, `access`, `protected`, `locked`, `manifest_cache`, `params`, `custom_data`, `checked_out`, `checked_out_time`, `ordering`, `state`, `note`) VALUES
+INSERT INTO `twp7l_extensions` (`extension_id`, `package_id`, `name`, `type`, `element`, `changelogurl`, `folder`, `client_id`, `enabled`, `access`, `protected`, `locked`, `manifest_cache`, `params`, `custom_data`, `checked_out`, `checked_out_time`, `ordering`, `state`, `note`) VALUES
 (87, 0, 'plg_api-authentication_token', 'plugin', 'token', NULL, 'api-authentication', 0, 1, 1, 0, 1, '{\"name\":\"plg_api-authentication_token\",\"type\":\"plugin\",\"creationDate\":\"2019-11\",\"author\":\"Joomla! Project\",\"copyright\":\"(C) 2020 Open Source Matters, Inc.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"www.joomla.org\",\"version\":\"4.0.0\",\"description\":\"PLG_API-AUTHENTICATION_TOKEN_XML_DESCRIPTION\",\"group\":\"\",\"filename\":\"token\"}', '{}', '', NULL, NULL, 2, 0, NULL),
 (88, 0, 'plg_authentication_cookie', 'plugin', 'cookie', NULL, 'authentication', 0, 1, 1, 0, 1, '{\"name\":\"plg_authentication_cookie\",\"type\":\"plugin\",\"creationDate\":\"2013-07\",\"author\":\"Joomla! Project\",\"copyright\":\"(C) 2013 Open Source Matters, Inc.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"www.joomla.org\",\"version\":\"3.0.0\",\"description\":\"PLG_AUTHENTICATION_COOKIE_XML_DESCRIPTION\",\"group\":\"\",\"filename\":\"cookie\"}', '', '', NULL, NULL, 1, 0, NULL),
 (89, 0, 'plg_authentication_joomla', 'plugin', 'joomla', NULL, 'authentication', 0, 1, 1, 1, 1, '{\"name\":\"plg_authentication_joomla\",\"type\":\"plugin\",\"creationDate\":\"2005-11\",\"author\":\"Joomla! Project\",\"copyright\":\"(C) 2005 Open Source Matters, Inc.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"www.joomla.org\",\"version\":\"3.0.0\",\"description\":\"PLG_AUTHENTICATION_JOOMLA_XML_DESCRIPTION\",\"group\":\"\",\"filename\":\"joomla\"}', '', '', NULL, NULL, 2, 0, NULL),
@@ -749,11 +758,11 @@ INSERT INTO `ljjbw_extensions` (`extension_id`, `package_id`, `name`, `type`, `e
 (172, 0, 'plg_system_languagefilter', 'plugin', 'languagefilter', NULL, 'system', 0, 0, 1, 0, 1, '{\"name\":\"plg_system_languagefilter\",\"type\":\"plugin\",\"creationDate\":\"2010-07\",\"author\":\"Joomla! Project\",\"copyright\":\"(C) 2010 Open Source Matters, Inc.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"www.joomla.org\",\"version\":\"3.0.0\",\"description\":\"PLG_SYSTEM_LANGUAGEFILTER_XML_DESCRIPTION\",\"group\":\"\",\"filename\":\"languagefilter\"}', '', '', NULL, NULL, 10, 0, NULL),
 (173, 0, 'plg_system_log', 'plugin', 'log', NULL, 'system', 0, 1, 1, 0, 1, '{\"name\":\"plg_system_log\",\"type\":\"plugin\",\"creationDate\":\"2007-04\",\"author\":\"Joomla! Project\",\"copyright\":\"(C) 2007 Open Source Matters, Inc.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"www.joomla.org\",\"version\":\"3.0.0\",\"description\":\"PLG_LOG_XML_DESCRIPTION\",\"group\":\"\",\"filename\":\"log\"}', '', '', NULL, NULL, 11, 0, NULL),
 (174, 0, 'plg_system_logout', 'plugin', 'logout', NULL, 'system', 0, 1, 1, 0, 1, '{\"name\":\"plg_system_logout\",\"type\":\"plugin\",\"creationDate\":\"2009-04\",\"author\":\"Joomla! Project\",\"copyright\":\"(C) 2009 Open Source Matters, Inc.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"www.joomla.org\",\"version\":\"3.0.0\",\"description\":\"PLG_SYSTEM_LOGOUT_XML_DESCRIPTION\",\"group\":\"\",\"filename\":\"logout\"}', '', '', NULL, NULL, 12, 0, NULL),
-(175, 0, 'plg_system_logrotation', 'plugin', 'logrotation', NULL, 'system', 0, 1, 1, 0, 1, '{\"name\":\"plg_system_logrotation\",\"type\":\"plugin\",\"creationDate\":\"2018-05\",\"author\":\"Joomla! Project\",\"copyright\":\"(C) 2018 Open Source Matters, Inc.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"www.joomla.org\",\"version\":\"3.9.0\",\"description\":\"PLG_SYSTEM_LOGROTATION_XML_DESCRIPTION\",\"group\":\"\",\"filename\":\"logrotation\"}', '{\"lastrun\":1677465356}', '', NULL, NULL, 13, 0, NULL),
+(175, 0, 'plg_system_logrotation', 'plugin', 'logrotation', NULL, 'system', 0, 1, 1, 0, 1, '{\"name\":\"plg_system_logrotation\",\"type\":\"plugin\",\"creationDate\":\"2018-05\",\"author\":\"Joomla! Project\",\"copyright\":\"(C) 2018 Open Source Matters, Inc.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"www.joomla.org\",\"version\":\"3.9.0\",\"description\":\"PLG_SYSTEM_LOGROTATION_XML_DESCRIPTION\",\"group\":\"\",\"filename\":\"logrotation\"}', '{\"lastrun\":1677471264}', '', NULL, NULL, 13, 0, NULL),
 (176, 0, 'plg_system_privacyconsent', 'plugin', 'privacyconsent', NULL, 'system', 0, 0, 1, 0, 1, '{\"name\":\"plg_system_privacyconsent\",\"type\":\"plugin\",\"creationDate\":\"2018-04\",\"author\":\"Joomla! Project\",\"copyright\":\"(C) 2018 Open Source Matters, Inc.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"www.joomla.org\",\"version\":\"3.9.0\",\"description\":\"PLG_SYSTEM_PRIVACYCONSENT_XML_DESCRIPTION\",\"group\":\"\",\"filename\":\"privacyconsent\"}', '{}', '', NULL, NULL, 14, 0, NULL),
 (177, 0, 'plg_system_redirect', 'plugin', 'redirect', NULL, 'system', 0, 0, 1, 0, 1, '{\"name\":\"plg_system_redirect\",\"type\":\"plugin\",\"creationDate\":\"2009-04\",\"author\":\"Joomla! Project\",\"copyright\":\"(C) 2009 Open Source Matters, Inc.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"www.joomla.org\",\"version\":\"3.0.0\",\"description\":\"PLG_SYSTEM_REDIRECT_XML_DESCRIPTION\",\"group\":\"\",\"filename\":\"redirect\"}', '', '', NULL, NULL, 15, 0, NULL),
 (178, 0, 'plg_system_remember', 'plugin', 'remember', NULL, 'system', 0, 1, 1, 0, 1, '{\"name\":\"plg_system_remember\",\"type\":\"plugin\",\"creationDate\":\"2007-04\",\"author\":\"Joomla! Project\",\"copyright\":\"(C) 2007 Open Source Matters, Inc.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"www.joomla.org\",\"version\":\"3.0.0\",\"description\":\"PLG_REMEMBER_XML_DESCRIPTION\",\"group\":\"\",\"filename\":\"remember\"}', '', '', NULL, NULL, 16, 0, NULL);
-INSERT INTO `ljjbw_extensions` (`extension_id`, `package_id`, `name`, `type`, `element`, `changelogurl`, `folder`, `client_id`, `enabled`, `access`, `protected`, `locked`, `manifest_cache`, `params`, `custom_data`, `checked_out`, `checked_out_time`, `ordering`, `state`, `note`) VALUES
+INSERT INTO `twp7l_extensions` (`extension_id`, `package_id`, `name`, `type`, `element`, `changelogurl`, `folder`, `client_id`, `enabled`, `access`, `protected`, `locked`, `manifest_cache`, `params`, `custom_data`, `checked_out`, `checked_out_time`, `ordering`, `state`, `note`) VALUES
 (179, 0, 'plg_system_schedulerunner', 'plugin', 'schedulerunner', NULL, 'system', 0, 1, 1, 0, 1, '{\"name\":\"plg_system_schedulerunner\",\"type\":\"plugin\",\"creationDate\":\"2021-08\",\"author\":\"Joomla! Project\",\"copyright\":\"(C) 2021 Open Source Matters, Inc.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"www.joomla.org\",\"version\":\"4.1\",\"description\":\"PLG_SYSTEM_SCHEDULERUNNER_XML_DESCRIPTION\",\"group\":\"\",\"filename\":\"schedulerunner\"}', '{}', '', NULL, NULL, 17, 0, NULL),
 (180, 0, 'plg_system_sef', 'plugin', 'sef', NULL, 'system', 0, 1, 1, 0, 1, '{\"name\":\"plg_system_sef\",\"type\":\"plugin\",\"creationDate\":\"2007-12\",\"author\":\"Joomla! Project\",\"copyright\":\"(C) 2007 Open Source Matters, Inc.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"www.joomla.org\",\"version\":\"3.0.0\",\"description\":\"PLG_SEF_XML_DESCRIPTION\",\"group\":\"\",\"filename\":\"sef\"}', '', '', NULL, NULL, 18, 0, NULL),
 (181, 0, 'plg_system_sessiongc', 'plugin', 'sessiongc', NULL, 'system', 0, 1, 1, 0, 1, '{\"name\":\"plg_system_sessiongc\",\"type\":\"plugin\",\"creationDate\":\"2018-02\",\"author\":\"Joomla! Project\",\"copyright\":\"(C) 2018 Open Source Matters, Inc.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"www.joomla.org\",\"version\":\"3.8.6\",\"description\":\"PLG_SYSTEM_SESSIONGC_XML_DESCRIPTION\",\"group\":\"\",\"filename\":\"sessiongc\"}', '', '', NULL, NULL, 19, 0, NULL),
@@ -761,7 +770,7 @@ INSERT INTO `ljjbw_extensions` (`extension_id`, `package_id`, `name`, `type`, `e
 (183, 0, 'plg_system_skipto', 'plugin', 'skipto', NULL, 'system', 0, 1, 1, 0, 1, '{\"name\":\"plg_system_skipto\",\"type\":\"plugin\",\"creationDate\":\"2020-02\",\"author\":\"Joomla! Project\",\"copyright\":\"(C) 2019 Open Source Matters, Inc.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"www.joomla.org\",\"version\":\"4.0.0\",\"description\":\"PLG_SYSTEM_SKIPTO_XML_DESCRIPTION\",\"group\":\"\",\"filename\":\"skipto\"}', '{}', '', NULL, NULL, 20, 0, NULL),
 (184, 0, 'plg_system_stats', 'plugin', 'stats', NULL, 'system', 0, 1, 1, 0, 1, '{\"name\":\"plg_system_stats\",\"type\":\"plugin\",\"creationDate\":\"2013-11\",\"author\":\"Joomla! Project\",\"copyright\":\"(C) 2013 Open Source Matters, Inc.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"www.joomla.org\",\"version\":\"3.5.0\",\"description\":\"PLG_SYSTEM_STATS_XML_DESCRIPTION\",\"group\":\"\",\"filename\":\"stats\"}', '', '', NULL, NULL, 21, 0, NULL),
 (185, 0, 'plg_system_task_notification', 'plugin', 'tasknotification', NULL, 'system', 0, 1, 1, 0, 1, '{\"name\":\"plg_system_task_notification\",\"type\":\"plugin\",\"creationDate\":\"2021-09\",\"author\":\"Joomla! Project\",\"copyright\":\"(C) 2021 Open Source Matters, Inc.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"www.joomla.org\",\"version\":\"4.1\",\"description\":\"PLG_SYSTEM_TASK_NOTIFICATION_XML_DESCRIPTION\",\"group\":\"\",\"filename\":\"tasknotification\"}', '', '', NULL, NULL, 22, 0, NULL),
-(186, 0, 'plg_system_updatenotification', 'plugin', 'updatenotification', NULL, 'system', 0, 1, 1, 0, 1, '{\"name\":\"plg_system_updatenotification\",\"type\":\"plugin\",\"creationDate\":\"2015-05\",\"author\":\"Joomla! Project\",\"copyright\":\"(C) 2015 Open Source Matters, Inc.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"www.joomla.org\",\"version\":\"3.5.0\",\"description\":\"PLG_SYSTEM_UPDATENOTIFICATION_XML_DESCRIPTION\",\"group\":\"\",\"filename\":\"updatenotification\"}', '{\"lastrun\":1677465356}', '', NULL, NULL, 23, 0, NULL),
+(186, 0, 'plg_system_updatenotification', 'plugin', 'updatenotification', NULL, 'system', 0, 1, 1, 0, 1, '{\"name\":\"plg_system_updatenotification\",\"type\":\"plugin\",\"creationDate\":\"2015-05\",\"author\":\"Joomla! Project\",\"copyright\":\"(C) 2015 Open Source Matters, Inc.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"www.joomla.org\",\"version\":\"3.5.0\",\"description\":\"PLG_SYSTEM_UPDATENOTIFICATION_XML_DESCRIPTION\",\"group\":\"\",\"filename\":\"updatenotification\"}', '{\"lastrun\":1677471264}', '', NULL, NULL, 23, 0, NULL),
 (187, 0, 'plg_system_webauthn', 'plugin', 'webauthn', NULL, 'system', 0, 1, 1, 0, 1, '{\"name\":\"plg_system_webauthn\",\"type\":\"plugin\",\"creationDate\":\"2019-07-02\",\"author\":\"Joomla! Project\",\"copyright\":\"(C) 2020 Open Source Matters, Inc.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"www.joomla.org\",\"version\":\"4.0.0\",\"description\":\"PLG_SYSTEM_WEBAUTHN_DESCRIPTION\",\"group\":\"\",\"filename\":\"webauthn\"}', '{}', '', NULL, NULL, 24, 0, NULL),
 (188, 0, 'plg_task_check_files', 'plugin', 'checkfiles', NULL, 'task', 0, 1, 1, 0, 1, '{\"name\":\"plg_task_check_files\",\"type\":\"plugin\",\"creationDate\":\"2021-08\",\"author\":\"Joomla! Project\",\"copyright\":\"(C) 2021 Open Source Matters, Inc.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"www.joomla.org\",\"version\":\"4.1\",\"description\":\"PLG_TASK_CHECK_FILES_XML_DESCRIPTION\",\"group\":\"\",\"filename\":\"checkfiles\"}', '{}', '', NULL, NULL, 1, 0, NULL),
 (189, 0, 'plg_task_demo_tasks', 'plugin', 'demotasks', NULL, 'task', 0, 1, 1, 0, 1, '{\"name\":\"plg_task_demo_tasks\",\"type\":\"plugin\",\"creationDate\":\"2021-07\",\"author\":\"Joomla! Project\",\"copyright\":\"(C) 2021 Open Source Matters, Inc.\",\"authorEmail\":\"admin@joomla.org\",\"authorUrl\":\"www.joomla.org\",\"version\":\"4.1\",\"description\":\"PLG_TASK_DEMO_TASKS_XML_DESCRIPTION\",\"group\":\"\",\"filename\":\"demotasks\"}', '{}', '', NULL, NULL, 2, 0, NULL),
@@ -808,10 +817,10 @@ INSERT INTO `ljjbw_extensions` (`extension_id`, `package_id`, `name`, `type`, `e
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ljjbw_fields`
+-- Table structure for table `twp7l_fields`
 --
 
-CREATE TABLE `ljjbw_fields` (
+CREATE TABLE `twp7l_fields` (
   `id` int(10) UNSIGNED NOT NULL,
   `asset_id` int(10) UNSIGNED NOT NULL DEFAULT 0,
   `context` varchar(255) NOT NULL DEFAULT '',
@@ -842,10 +851,10 @@ CREATE TABLE `ljjbw_fields` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ljjbw_fields_categories`
+-- Table structure for table `twp7l_fields_categories`
 --
 
-CREATE TABLE `ljjbw_fields_categories` (
+CREATE TABLE `twp7l_fields_categories` (
   `field_id` int(11) NOT NULL DEFAULT 0,
   `category_id` int(11) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -853,10 +862,10 @@ CREATE TABLE `ljjbw_fields_categories` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ljjbw_fields_groups`
+-- Table structure for table `twp7l_fields_groups`
 --
 
-CREATE TABLE `ljjbw_fields_groups` (
+CREATE TABLE `twp7l_fields_groups` (
   `id` int(10) UNSIGNED NOT NULL,
   `asset_id` int(10) UNSIGNED NOT NULL DEFAULT 0,
   `context` varchar(255) NOT NULL DEFAULT '',
@@ -879,10 +888,10 @@ CREATE TABLE `ljjbw_fields_groups` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ljjbw_fields_values`
+-- Table structure for table `twp7l_fields_values`
 --
 
-CREATE TABLE `ljjbw_fields_values` (
+CREATE TABLE `twp7l_fields_values` (
   `field_id` int(10) UNSIGNED NOT NULL,
   `item_id` varchar(255) NOT NULL COMMENT 'Allow references to items which have strings as ids, eg. none db systems.',
   `value` text DEFAULT NULL
@@ -891,10 +900,10 @@ CREATE TABLE `ljjbw_fields_values` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ljjbw_finder_filters`
+-- Table structure for table `twp7l_finder_filters`
 --
 
-CREATE TABLE `ljjbw_finder_filters` (
+CREATE TABLE `twp7l_finder_filters` (
   `filter_id` int(10) UNSIGNED NOT NULL,
   `title` varchar(255) NOT NULL,
   `alias` varchar(255) NOT NULL,
@@ -914,10 +923,10 @@ CREATE TABLE `ljjbw_finder_filters` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ljjbw_finder_links`
+-- Table structure for table `twp7l_finder_links`
 --
 
-CREATE TABLE `ljjbw_finder_links` (
+CREATE TABLE `twp7l_finder_links` (
   `link_id` int(10) UNSIGNED NOT NULL,
   `url` varchar(255) NOT NULL,
   `route` varchar(400) NOT NULL,
@@ -942,10 +951,10 @@ CREATE TABLE `ljjbw_finder_links` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ljjbw_finder_links_terms`
+-- Table structure for table `twp7l_finder_links_terms`
 --
 
-CREATE TABLE `ljjbw_finder_links_terms` (
+CREATE TABLE `twp7l_finder_links_terms` (
   `link_id` int(10) UNSIGNED NOT NULL,
   `term_id` int(10) UNSIGNED NOT NULL,
   `weight` float UNSIGNED NOT NULL DEFAULT 0
@@ -954,10 +963,10 @@ CREATE TABLE `ljjbw_finder_links_terms` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ljjbw_finder_logging`
+-- Table structure for table `twp7l_finder_logging`
 --
 
-CREATE TABLE `ljjbw_finder_logging` (
+CREATE TABLE `twp7l_finder_logging` (
   `searchterm` varchar(255) NOT NULL DEFAULT '',
   `md5sum` varchar(32) NOT NULL DEFAULT '',
   `query` blob NOT NULL,
@@ -968,10 +977,10 @@ CREATE TABLE `ljjbw_finder_logging` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ljjbw_finder_taxonomy`
+-- Table structure for table `twp7l_finder_taxonomy`
 --
 
-CREATE TABLE `ljjbw_finder_taxonomy` (
+CREATE TABLE `twp7l_finder_taxonomy` (
   `id` int(10) UNSIGNED NOT NULL,
   `parent_id` int(10) UNSIGNED NOT NULL DEFAULT 0,
   `lft` int(11) NOT NULL DEFAULT 0,
@@ -986,19 +995,19 @@ CREATE TABLE `ljjbw_finder_taxonomy` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `ljjbw_finder_taxonomy`
+-- Dumping data for table `twp7l_finder_taxonomy`
 --
 
-INSERT INTO `ljjbw_finder_taxonomy` (`id`, `parent_id`, `lft`, `rgt`, `level`, `path`, `title`, `alias`, `state`, `access`, `language`) VALUES
+INSERT INTO `twp7l_finder_taxonomy` (`id`, `parent_id`, `lft`, `rgt`, `level`, `path`, `title`, `alias`, `state`, `access`, `language`) VALUES
 (1, 0, 0, 1, 0, '', 'ROOT', 'root', 1, 1, '*');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ljjbw_finder_taxonomy_map`
+-- Table structure for table `twp7l_finder_taxonomy_map`
 --
 
-CREATE TABLE `ljjbw_finder_taxonomy_map` (
+CREATE TABLE `twp7l_finder_taxonomy_map` (
   `link_id` int(10) UNSIGNED NOT NULL,
   `node_id` int(10) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -1006,10 +1015,10 @@ CREATE TABLE `ljjbw_finder_taxonomy_map` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ljjbw_finder_terms`
+-- Table structure for table `twp7l_finder_terms`
 --
 
-CREATE TABLE `ljjbw_finder_terms` (
+CREATE TABLE `twp7l_finder_terms` (
   `term_id` int(10) UNSIGNED NOT NULL,
   `term` varchar(75) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
   `stem` varchar(75) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL DEFAULT '',
@@ -1024,20 +1033,20 @@ CREATE TABLE `ljjbw_finder_terms` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ljjbw_finder_terms_common`
+-- Table structure for table `twp7l_finder_terms_common`
 --
 
-CREATE TABLE `ljjbw_finder_terms_common` (
+CREATE TABLE `twp7l_finder_terms_common` (
   `term` varchar(75) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL DEFAULT '',
   `language` char(7) NOT NULL DEFAULT '',
   `custom` int(11) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `ljjbw_finder_terms_common`
+-- Dumping data for table `twp7l_finder_terms_common`
 --
 
-INSERT INTO `ljjbw_finder_terms_common` (`term`, `language`, `custom`) VALUES
+INSERT INTO `twp7l_finder_terms_common` (`term`, `language`, `custom`) VALUES
 ('a', 'en', 0),
 ('about', 'en', 0),
 ('above', 'en', 0),
@@ -1216,10 +1225,10 @@ INSERT INTO `ljjbw_finder_terms_common` (`term`, `language`, `custom`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ljjbw_finder_tokens`
+-- Table structure for table `twp7l_finder_tokens`
 --
 
-CREATE TABLE `ljjbw_finder_tokens` (
+CREATE TABLE `twp7l_finder_tokens` (
   `term` varchar(75) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
   `stem` varchar(75) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL DEFAULT '',
   `common` tinyint(3) UNSIGNED NOT NULL DEFAULT 0,
@@ -1232,10 +1241,10 @@ CREATE TABLE `ljjbw_finder_tokens` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ljjbw_finder_tokens_aggregate`
+-- Table structure for table `twp7l_finder_tokens_aggregate`
 --
 
-CREATE TABLE `ljjbw_finder_tokens_aggregate` (
+CREATE TABLE `twp7l_finder_tokens_aggregate` (
   `term_id` int(10) UNSIGNED NOT NULL,
   `term` varchar(75) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
   `stem` varchar(75) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL DEFAULT '',
@@ -1251,10 +1260,10 @@ CREATE TABLE `ljjbw_finder_tokens_aggregate` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ljjbw_finder_types`
+-- Table structure for table `twp7l_finder_types`
 --
 
-CREATE TABLE `ljjbw_finder_types` (
+CREATE TABLE `twp7l_finder_types` (
   `id` int(10) UNSIGNED NOT NULL,
   `title` varchar(100) NOT NULL,
   `mime` varchar(100) NOT NULL DEFAULT ''
@@ -1263,10 +1272,10 @@ CREATE TABLE `ljjbw_finder_types` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ljjbw_history`
+-- Table structure for table `twp7l_history`
 --
 
-CREATE TABLE `ljjbw_history` (
+CREATE TABLE `twp7l_history` (
   `version_id` int(10) UNSIGNED NOT NULL,
   `item_id` varchar(50) NOT NULL,
   `version_note` varchar(255) NOT NULL DEFAULT '' COMMENT 'Optional version name',
@@ -1281,10 +1290,10 @@ CREATE TABLE `ljjbw_history` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ljjbw_languages`
+-- Table structure for table `twp7l_languages`
 --
 
-CREATE TABLE `ljjbw_languages` (
+CREATE TABLE `twp7l_languages` (
   `lang_id` int(10) UNSIGNED NOT NULL,
   `asset_id` int(10) UNSIGNED NOT NULL DEFAULT 0,
   `lang_code` char(7) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
@@ -1302,19 +1311,19 @@ CREATE TABLE `ljjbw_languages` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `ljjbw_languages`
+-- Dumping data for table `twp7l_languages`
 --
 
-INSERT INTO `ljjbw_languages` (`lang_id`, `asset_id`, `lang_code`, `title`, `title_native`, `sef`, `image`, `description`, `metakey`, `metadesc`, `sitename`, `published`, `access`, `ordering`) VALUES
+INSERT INTO `twp7l_languages` (`lang_id`, `asset_id`, `lang_code`, `title`, `title_native`, `sef`, `image`, `description`, `metakey`, `metadesc`, `sitename`, `published`, `access`, `ordering`) VALUES
 (1, 0, 'en-GB', 'English (en-GB)', 'English (United Kingdom)', 'en', 'en_gb', '', '', '', '', 1, 1, 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ljjbw_mail_templates`
+-- Table structure for table `twp7l_mail_templates`
 --
 
-CREATE TABLE `ljjbw_mail_templates` (
+CREATE TABLE `twp7l_mail_templates` (
   `template_id` varchar(127) NOT NULL DEFAULT '',
   `extension` varchar(127) NOT NULL DEFAULT '',
   `language` char(7) NOT NULL DEFAULT '',
@@ -1326,10 +1335,10 @@ CREATE TABLE `ljjbw_mail_templates` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `ljjbw_mail_templates`
+-- Dumping data for table `twp7l_mail_templates`
 --
 
-INSERT INTO `ljjbw_mail_templates` (`template_id`, `extension`, `language`, `subject`, `body`, `htmlbody`, `attachments`, `params`) VALUES
+INSERT INTO `twp7l_mail_templates` (`template_id`, `extension`, `language`, `subject`, `body`, `htmlbody`, `attachments`, `params`) VALUES
 ('com_actionlogs.notification', 'com_actionlogs', '', 'COM_ACTIONLOGS_EMAIL_SUBJECT', 'COM_ACTIONLOGS_EMAIL_BODY', 'COM_ACTIONLOGS_EMAIL_HTMLBODY', '', '{\"tags\":[\"message\",\"date\",\"extension\",\"username\"]}'),
 ('com_config.test_mail', 'com_config', '', 'COM_CONFIG_SENDMAIL_SUBJECT', 'COM_CONFIG_SENDMAIL_BODY', '', '', '{\"tags\":[\"sitename\",\"method\"]}'),
 ('com_contact.mail', 'com_contact', '', 'COM_CONTACT_ENQUIRY_SUBJECT', 'COM_CONTACT_ENQUIRY_TEXT', '', '', '{\"tags\":[\"sitename\",\"name\",\"email\",\"subject\",\"body\",\"url\",\"customfields\"]}'),
@@ -1364,10 +1373,10 @@ INSERT INTO `ljjbw_mail_templates` (`template_id`, `extension`, `language`, `sub
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ljjbw_menu`
+-- Table structure for table `twp7l_menu`
 --
 
-CREATE TABLE `ljjbw_menu` (
+CREATE TABLE `twp7l_menu` (
   `id` int(11) NOT NULL,
   `menutype` varchar(24) NOT NULL COMMENT 'The type of menu this item belongs to. FK to #__menu_types.menutype',
   `title` varchar(255) NOT NULL COMMENT 'The display title of the menu item.',
@@ -1397,10 +1406,10 @@ CREATE TABLE `ljjbw_menu` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `ljjbw_menu`
+-- Dumping data for table `twp7l_menu`
 --
 
-INSERT INTO `ljjbw_menu` (`id`, `menutype`, `title`, `alias`, `note`, `path`, `link`, `type`, `published`, `parent_id`, `level`, `component_id`, `checked_out`, `checked_out_time`, `browserNav`, `access`, `img`, `template_style_id`, `params`, `lft`, `rgt`, `home`, `language`, `client_id`, `publish_up`, `publish_down`) VALUES
+INSERT INTO `twp7l_menu` (`id`, `menutype`, `title`, `alias`, `note`, `path`, `link`, `type`, `published`, `parent_id`, `level`, `component_id`, `checked_out`, `checked_out_time`, `browserNav`, `access`, `img`, `template_style_id`, `params`, `lft`, `rgt`, `home`, `language`, `client_id`, `publish_up`, `publish_down`) VALUES
 (1, '', 'Menu_Item_Root', 'root', '', '', '', '', 1, 0, 0, 0, NULL, NULL, 0, 0, '', 0, '', 0, 43, 0, '*', 0, NULL, NULL),
 (2, 'main', 'com_banners', 'Banners', '', 'Banners', 'index.php?option=com_banners', 'component', 1, 1, 1, 3, NULL, NULL, 0, 0, 'class:bookmark', 0, '', 1, 10, 0, '*', 1, NULL, NULL),
 (3, 'main', 'com_banners', 'Banners', '', 'Banners/Banners', 'index.php?option=com_banners&view=banners', 'component', 1, 2, 2, 3, NULL, NULL, 0, 0, 'class:banners', 0, '', 2, 3, 0, '*', 1, NULL, NULL),
@@ -1427,10 +1436,10 @@ INSERT INTO `ljjbw_menu` (`id`, `menutype`, `title`, `alias`, `note`, `path`, `l
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ljjbw_menu_types`
+-- Table structure for table `twp7l_menu_types`
 --
 
-CREATE TABLE `ljjbw_menu_types` (
+CREATE TABLE `twp7l_menu_types` (
   `id` int(10) UNSIGNED NOT NULL,
   `asset_id` int(10) UNSIGNED NOT NULL DEFAULT 0,
   `menutype` varchar(24) NOT NULL,
@@ -1440,19 +1449,19 @@ CREATE TABLE `ljjbw_menu_types` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `ljjbw_menu_types`
+-- Dumping data for table `twp7l_menu_types`
 --
 
-INSERT INTO `ljjbw_menu_types` (`id`, `asset_id`, `menutype`, `title`, `description`, `client_id`) VALUES
+INSERT INTO `twp7l_menu_types` (`id`, `asset_id`, `menutype`, `title`, `description`, `client_id`) VALUES
 (1, 0, 'mainmenu', 'Main Menu', 'The main menu for the site', 0);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ljjbw_messages`
+-- Table structure for table `twp7l_messages`
 --
 
-CREATE TABLE `ljjbw_messages` (
+CREATE TABLE `twp7l_messages` (
   `message_id` int(10) UNSIGNED NOT NULL,
   `user_id_from` int(10) UNSIGNED NOT NULL DEFAULT 0,
   `user_id_to` int(10) UNSIGNED NOT NULL DEFAULT 0,
@@ -1467,10 +1476,10 @@ CREATE TABLE `ljjbw_messages` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ljjbw_messages_cfg`
+-- Table structure for table `twp7l_messages_cfg`
 --
 
-CREATE TABLE `ljjbw_messages_cfg` (
+CREATE TABLE `twp7l_messages_cfg` (
   `user_id` int(10) UNSIGNED NOT NULL DEFAULT 0,
   `cfg_name` varchar(100) NOT NULL DEFAULT '',
   `cfg_value` varchar(255) NOT NULL DEFAULT ''
@@ -1479,10 +1488,10 @@ CREATE TABLE `ljjbw_messages_cfg` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ljjbw_modules`
+-- Table structure for table `twp7l_modules`
 --
 
-CREATE TABLE `ljjbw_modules` (
+CREATE TABLE `twp7l_modules` (
   `id` int(11) NOT NULL,
   `asset_id` int(10) UNSIGNED NOT NULL DEFAULT 0 COMMENT 'FK to the #__assets table.',
   `title` varchar(100) NOT NULL DEFAULT '',
@@ -1504,10 +1513,10 @@ CREATE TABLE `ljjbw_modules` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `ljjbw_modules`
+-- Dumping data for table `twp7l_modules`
 --
 
-INSERT INTO `ljjbw_modules` (`id`, `asset_id`, `title`, `note`, `content`, `ordering`, `position`, `checked_out`, `checked_out_time`, `publish_up`, `publish_down`, `published`, `module`, `access`, `showtitle`, `params`, `client_id`, `language`) VALUES
+INSERT INTO `twp7l_modules` (`id`, `asset_id`, `title`, `note`, `content`, `ordering`, `position`, `checked_out`, `checked_out_time`, `publish_up`, `publish_down`, `published`, `module`, `access`, `showtitle`, `params`, `client_id`, `language`) VALUES
 (1, 39, 'Main Menu', '', '', 1, 'sidebar-right', NULL, NULL, NULL, NULL, 1, 'mod_menu', 1, 1, '{\"menutype\":\"mainmenu\",\"startLevel\":\"0\",\"endLevel\":\"0\",\"showAllChildren\":\"1\",\"tag_id\":\"\",\"class_sfx\":\"\",\"window_open\":\"\",\"layout\":\"_:default\",\"moduleclass_sfx\":\"\",\"cache\":\"1\",\"cache_time\":\"900\",\"cachemode\":\"itemid\"}', 0, '*'),
 (2, 40, 'Login', '', '', 1, 'login', NULL, NULL, NULL, NULL, 1, 'mod_login', 1, 1, '', 1, '*'),
 (3, 41, 'Popular Articles', '', '', 3, 'cpanel', NULL, NULL, NULL, NULL, 1, 'mod_popular', 3, 1, '{\"count\":\"5\",\"catid\":\"\",\"user_id\":\"0\",\"layout\":\"_:default\",\"moduleclass_sfx\":\"\",\"cache\":\"0\", \"bootstrap_size\": \"12\",\"header_tag\":\"h2\"}', 1, '*'),
@@ -1547,19 +1556,19 @@ INSERT INTO `ljjbw_modules` (`id`, `asset_id`, `title`, `note`, `content`, `orde
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ljjbw_modules_menu`
+-- Table structure for table `twp7l_modules_menu`
 --
 
-CREATE TABLE `ljjbw_modules_menu` (
+CREATE TABLE `twp7l_modules_menu` (
   `moduleid` int(11) NOT NULL DEFAULT 0,
   `menuid` int(11) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `ljjbw_modules_menu`
+-- Dumping data for table `twp7l_modules_menu`
 --
 
-INSERT INTO `ljjbw_modules_menu` (`moduleid`, `menuid`) VALUES
+INSERT INTO `twp7l_modules_menu` (`moduleid`, `menuid`) VALUES
 (1, 0),
 (2, 0),
 (3, 0),
@@ -1602,10 +1611,10 @@ INSERT INTO `ljjbw_modules_menu` (`moduleid`, `menuid`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ljjbw_newsfeeds`
+-- Table structure for table `twp7l_newsfeeds`
 --
 
-CREATE TABLE `ljjbw_newsfeeds` (
+CREATE TABLE `twp7l_newsfeeds` (
   `catid` int(11) NOT NULL DEFAULT 0,
   `id` int(10) UNSIGNED NOT NULL,
   `name` varchar(100) NOT NULL DEFAULT '',
@@ -1640,10 +1649,10 @@ CREATE TABLE `ljjbw_newsfeeds` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ljjbw_overrider`
+-- Table structure for table `twp7l_overrider`
 --
 
-CREATE TABLE `ljjbw_overrider` (
+CREATE TABLE `twp7l_overrider` (
   `id` int(11) NOT NULL COMMENT 'Primary Key',
   `constant` varchar(255) NOT NULL,
   `string` text NOT NULL,
@@ -1653,10 +1662,10 @@ CREATE TABLE `ljjbw_overrider` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ljjbw_postinstall_messages`
+-- Table structure for table `twp7l_postinstall_messages`
 --
 
-CREATE TABLE `ljjbw_postinstall_messages` (
+CREATE TABLE `twp7l_postinstall_messages` (
   `postinstall_message_id` bigint(20) UNSIGNED NOT NULL,
   `extension_id` bigint(20) NOT NULL DEFAULT 700 COMMENT 'FK to #__extensions',
   `title_key` varchar(255) NOT NULL DEFAULT '' COMMENT 'Lang key for the title',
@@ -1674,10 +1683,10 @@ CREATE TABLE `ljjbw_postinstall_messages` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `ljjbw_postinstall_messages`
+-- Dumping data for table `twp7l_postinstall_messages`
 --
 
-INSERT INTO `ljjbw_postinstall_messages` (`postinstall_message_id`, `extension_id`, `title_key`, `description_key`, `action_key`, `language_extension`, `language_client_id`, `type`, `action_file`, `action`, `condition_file`, `condition_method`, `version_introduced`, `enabled`) VALUES
+INSERT INTO `twp7l_postinstall_messages` (`postinstall_message_id`, `extension_id`, `title_key`, `description_key`, `action_key`, `language_extension`, `language_client_id`, `type`, `action_file`, `action`, `condition_file`, `condition_method`, `version_introduced`, `enabled`) VALUES
 (1, 224, 'COM_CPANEL_WELCOME_BEGINNERS_TITLE', 'COM_CPANEL_WELCOME_BEGINNERS_MESSAGE', '', 'com_cpanel', 1, 'message', '', '', '', '', '3.2.0', 1),
 (2, 224, 'COM_CPANEL_MSG_STATS_COLLECTION_TITLE', 'COM_CPANEL_MSG_STATS_COLLECTION_BODY', '', 'com_cpanel', 1, 'message', '', '', 'admin://components/com_admin/postinstall/statscollection.php', 'admin_postinstall_statscollection_condition', '3.5.0', 1),
 (3, 224, 'PLG_SYSTEM_UPDATENOTIFICATION_POSTINSTALL_UPDATECACHETIME', 'PLG_SYSTEM_UPDATENOTIFICATION_POSTINSTALL_UPDATECACHETIME_BODY', 'PLG_SYSTEM_UPDATENOTIFICATION_POSTINSTALL_UPDATECACHETIME_ACTION', 'plg_system_updatenotification', 1, 'action', 'site://plugins/system/updatenotification/postinstall/updatecachetime.php', 'updatecachetime_postinstall_action', 'site://plugins/system/updatenotification/postinstall/updatecachetime.php', 'updatecachetime_postinstall_condition', '3.6.3', 1),
@@ -1687,10 +1696,10 @@ INSERT INTO `ljjbw_postinstall_messages` (`postinstall_message_id`, `extension_i
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ljjbw_privacy_consents`
+-- Table structure for table `twp7l_privacy_consents`
 --
 
-CREATE TABLE `ljjbw_privacy_consents` (
+CREATE TABLE `twp7l_privacy_consents` (
   `id` int(10) UNSIGNED NOT NULL,
   `user_id` int(10) UNSIGNED NOT NULL DEFAULT 0,
   `state` int(11) NOT NULL DEFAULT 1,
@@ -1704,10 +1713,10 @@ CREATE TABLE `ljjbw_privacy_consents` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ljjbw_privacy_requests`
+-- Table structure for table `twp7l_privacy_requests`
 --
 
-CREATE TABLE `ljjbw_privacy_requests` (
+CREATE TABLE `twp7l_privacy_requests` (
   `id` int(10) UNSIGNED NOT NULL,
   `email` varchar(100) NOT NULL DEFAULT '',
   `requested_at` datetime NOT NULL,
@@ -1720,10 +1729,10 @@ CREATE TABLE `ljjbw_privacy_requests` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ljjbw_redirect_links`
+-- Table structure for table `twp7l_redirect_links`
 --
 
-CREATE TABLE `ljjbw_redirect_links` (
+CREATE TABLE `twp7l_redirect_links` (
   `id` int(10) UNSIGNED NOT NULL,
   `old_url` varchar(2048) NOT NULL,
   `new_url` varchar(2048) DEFAULT NULL,
@@ -1739,10 +1748,10 @@ CREATE TABLE `ljjbw_redirect_links` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ljjbw_scheduler_tasks`
+-- Table structure for table `twp7l_scheduler_tasks`
 --
 
-CREATE TABLE `ljjbw_scheduler_tasks` (
+CREATE TABLE `twp7l_scheduler_tasks` (
   `id` int(10) UNSIGNED NOT NULL,
   `asset_id` int(10) UNSIGNED NOT NULL DEFAULT 0 COMMENT 'FK to the #__assets table.',
   `title` varchar(255) NOT NULL DEFAULT '',
@@ -1770,28 +1779,28 @@ CREATE TABLE `ljjbw_scheduler_tasks` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ljjbw_schemas`
+-- Table structure for table `twp7l_schemas`
 --
 
-CREATE TABLE `ljjbw_schemas` (
+CREATE TABLE `twp7l_schemas` (
   `extension_id` int(11) NOT NULL,
   `version_id` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `ljjbw_schemas`
+-- Dumping data for table `twp7l_schemas`
 --
 
-INSERT INTO `ljjbw_schemas` (`extension_id`, `version_id`) VALUES
+INSERT INTO `twp7l_schemas` (`extension_id`, `version_id`) VALUES
 (224, '4.2.7-2022-12-29');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ljjbw_session`
+-- Table structure for table `twp7l_session`
 --
 
-CREATE TABLE `ljjbw_session` (
+CREATE TABLE `twp7l_session` (
   `session_id` varbinary(192) NOT NULL,
   `client_id` tinyint(3) UNSIGNED DEFAULT NULL,
   `guest` tinyint(3) UNSIGNED DEFAULT 1,
@@ -1802,20 +1811,20 @@ CREATE TABLE `ljjbw_session` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `ljjbw_session`
+-- Dumping data for table `twp7l_session`
 --
 
-INSERT INTO `ljjbw_session` (`session_id`, `client_id`, `guest`, `time`, `data`, `userid`, `username`) VALUES
-(0x333865676e6e71397663666639366e7530746b6b663562343167, 1, 1, 1677465365, 'joomla|s:764:\"TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjQ6e3M6Nzoic2Vzc2lvbiI7Tzo4OiJzdGRDbGFzcyI6Mzp7czo3OiJjb3VudGVyIjtpOjM7czo1OiJ0aW1lciI7Tzo4OiJzdGRDbGFzcyI6Mzp7czo1OiJzdGFydCI7aToxNjc3NDY1MzU2O3M6NDoibGFzdCI7aToxNjc3NDY1MzY1O3M6Mzoibm93IjtpOjE2Nzc0NjUzNjU7fXM6NToidG9rZW4iO3M6MzI6IjU5NDYwMTgxM2JhNTdhNjhkYWQ1OWMzN2JlYzNmNGYyIjt9czo4OiJyZWdpc3RyeSI7TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjA6e31zOjE0OiIAKgBpbml0aWFsaXplZCI7YjowO3M6OToic2VwYXJhdG9yIjtzOjE6Ii4iO31zOjQ6InVzZXIiO086MjA6Ikpvb21sYVxDTVNcVXNlclxVc2VyIjoxOntzOjI6ImlkIjtpOjA7fXM6MTE6ImFwcGxpY2F0aW9uIjtPOjg6InN0ZENsYXNzIjoxOntzOjU6InF1ZXVlIjthOjA6e319fXM6MTQ6IgAqAGluaXRpYWxpemVkIjtiOjA7czo5OiJzZXBhcmF0b3IiO3M6MToiLiI7fQ==\";', 0, ''),
-(0x73347567666e6e6134756365683038373667306b367361633962, 0, 1, 1677465409, 'joomla|s:688:\"TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjM6e3M6Nzoic2Vzc2lvbiI7Tzo4OiJzdGRDbGFzcyI6Mzp7czo3OiJjb3VudGVyIjtpOjE7czo1OiJ0aW1lciI7Tzo4OiJzdGRDbGFzcyI6Mzp7czo1OiJzdGFydCI7aToxNjc3NDY1NDA5O3M6NDoibGFzdCI7aToxNjc3NDY1NDA5O3M6Mzoibm93IjtpOjE2Nzc0NjU0MDk7fXM6NToidG9rZW4iO3M6MzI6IjcwNDlhZDVlNTUyMjgzYzk2MDVhODU1YTNlOTFhODI3Ijt9czo4OiJyZWdpc3RyeSI7TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjA6e31zOjE0OiIAKgBpbml0aWFsaXplZCI7YjowO3M6OToic2VwYXJhdG9yIjtzOjE6Ii4iO31zOjQ6InVzZXIiO086MjA6Ikpvb21sYVxDTVNcVXNlclxVc2VyIjoxOntzOjI6ImlkIjtpOjA7fX1zOjE0OiIAKgBpbml0aWFsaXplZCI7YjowO3M6OToic2VwYXJhdG9yIjtzOjE6Ii4iO30=\";', 0, '');
+INSERT INTO `twp7l_session` (`session_id`, `client_id`, `guest`, `time`, `data`, `userid`, `username`) VALUES
+(0x74316a30347265703776726d76636e3964643876756439706374, 0, 0, 1677471282, 'joomla|s:1044:\"TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjU6e3M6Nzoic2Vzc2lvbiI7Tzo4OiJzdGRDbGFzcyI6Mzp7czo3OiJjb3VudGVyIjtpOjU7czo1OiJ0aW1lciI7Tzo4OiJzdGRDbGFzcyI6Mzp7czo1OiJzdGFydCI7aToxNjc3NDcxMjY0O3M6NDoibGFzdCI7aToxNjc3NDcxMjgyO3M6Mzoibm93IjtpOjE2Nzc0NzEyODI7fXM6NToidG9rZW4iO3M6MzI6IjQ0NGU2NjYzYzM4NWY4OGI3NGM3YmMwMzA5Mjg4ZDA1Ijt9czo4OiJyZWdpc3RyeSI7TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjE6e3M6NToidXNlcnMiO086ODoic3RkQ2xhc3MiOjE6e3M6NToibG9naW4iO086ODoic3RkQ2xhc3MiOjE6e3M6NDoiZm9ybSI7Tzo4OiJzdGRDbGFzcyI6Mjp7czo2OiJyZXR1cm4iO3M6MjI6Imh0dHA6Ly8xMDMuMTAyLjE1My4zMi8iO3M6NDoiZGF0YSI7YTowOnt9fX19fXM6MTQ6IgAqAGluaXRpYWxpemVkIjtiOjA7czo5OiJzZXBhcmF0b3IiO3M6MToiLiI7fXM6NDoidXNlciI7TzoyMDoiSm9vbWxhXENNU1xVc2VyXFVzZXIiOjE6e3M6MjoiaWQiO2k6NTkzO31zOjExOiJhcHBsaWNhdGlvbiI7Tzo4OiJzdGRDbGFzcyI6MTp7czo1OiJxdWV1ZSI7YTowOnt9fXM6OToiY29tX3VzZXJzIjtPOjg6InN0ZENsYXNzIjoxOntzOjExOiJtZmFfY2hlY2tlZCI7aToxO319czoxNDoiACoAaW5pdGlhbGl6ZWQiO2I6MDtzOjk6InNlcGFyYXRvciI7czoxOiIuIjt9\";', 593, 'administrator'),
+(0x7576686a383862357073756d6e73393737396a76647566686736, 1, 0, 1677471388, 'joomla|s:984:\"TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjQ6e3M6Nzoic2Vzc2lvbiI7Tzo4OiJzdGRDbGFzcyI6Mzp7czo3OiJjb3VudGVyIjtpOjQwO3M6NToidGltZXIiO086ODoic3RkQ2xhc3MiOjM6e3M6NToic3RhcnQiO2k6MTY3NzQ3MTI4ODtzOjQ6Imxhc3QiO2k6MTY3NzQ3MTM4ODtzOjM6Im5vdyI7aToxNjc3NDcxMzg4O31zOjU6InRva2VuIjtzOjMyOiJhYmJiYTk1NjJiMWQ5OTBkOThiOTg1YjE3ODViMjdiYiI7fXM6ODoicmVnaXN0cnkiO086MjQ6Ikpvb21sYVxSZWdpc3RyeVxSZWdpc3RyeSI6Mzp7czo3OiIAKgBkYXRhIjtPOjg6InN0ZENsYXNzIjoxOntzOjEzOiJjb21faW5zdGFsbGVyIjtPOjg6InN0ZENsYXNzIjozOntzOjc6Im1lc3NhZ2UiO3M6MDoiIjtzOjE3OiJleHRlbnNpb25fbWVzc2FnZSI7czowOiIiO3M6ODoid2FybmluZ3MiO086ODoic3RkQ2xhc3MiOjI6e3M6ODoib3JkZXJjb2wiO047czo5OiJvcmRlcmRpcm4iO047fX19czoxNDoiACoAaW5pdGlhbGl6ZWQiO2I6MDtzOjk6InNlcGFyYXRvciI7czoxOiIuIjt9czo0OiJ1c2VyIjtPOjIwOiJKb29tbGFcQ01TXFVzZXJcVXNlciI6MTp7czoyOiJpZCI7aTo1OTM7fXM6OToiY29tX3VzZXJzIjtPOjg6InN0ZENsYXNzIjoxOntzOjExOiJtZmFfY2hlY2tlZCI7aToxO319czoxNDoiACoAaW5pdGlhbGl6ZWQiO2I6MDtzOjk6InNlcGFyYXRvciI7czoxOiIuIjt9\";', 593, 'administrator');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ljjbw_tags`
+-- Table structure for table `twp7l_tags`
 --
 
-CREATE TABLE `ljjbw_tags` (
+CREATE TABLE `twp7l_tags` (
   `id` int(10) UNSIGNED NOT NULL,
   `parent_id` int(10) UNSIGNED NOT NULL DEFAULT 0,
   `lft` int(11) NOT NULL DEFAULT 0,
@@ -1849,19 +1858,19 @@ CREATE TABLE `ljjbw_tags` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `ljjbw_tags`
+-- Dumping data for table `twp7l_tags`
 --
 
-INSERT INTO `ljjbw_tags` (`id`, `parent_id`, `lft`, `rgt`, `level`, `path`, `title`, `alias`, `note`, `description`, `published`, `checked_out`, `checked_out_time`, `access`, `params`, `metadesc`, `metakey`, `metadata`, `created_user_id`, `created_time`, `created_by_alias`, `modified_user_id`, `modified_time`, `images`, `urls`, `hits`, `language`, `version`, `publish_up`, `publish_down`) VALUES
-(1, 0, 0, 1, 0, '', 'ROOT', 'root', '', '', 1, NULL, NULL, 1, '', '', '', '', 485, '2023-02-27 02:34:16', '', 485, '2023-02-27 02:34:16', '', '', 0, '*', 1, NULL, NULL);
+INSERT INTO `twp7l_tags` (`id`, `parent_id`, `lft`, `rgt`, `level`, `path`, `title`, `alias`, `note`, `description`, `published`, `checked_out`, `checked_out_time`, `access`, `params`, `metadesc`, `metakey`, `metadata`, `created_user_id`, `created_time`, `created_by_alias`, `modified_user_id`, `modified_time`, `images`, `urls`, `hits`, `language`, `version`, `publish_up`, `publish_down`) VALUES
+(1, 0, 0, 1, 0, '', 'ROOT', 'root', '', '', 1, NULL, NULL, 1, '', '', '', '', 593, '2023-02-27 04:14:18', '', 593, '2023-02-27 04:14:18', '', '', 0, '*', 1, NULL, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ljjbw_template_overrides`
+-- Table structure for table `twp7l_template_overrides`
 --
 
-CREATE TABLE `ljjbw_template_overrides` (
+CREATE TABLE `twp7l_template_overrides` (
   `id` int(10) UNSIGNED NOT NULL,
   `template` varchar(50) NOT NULL DEFAULT '',
   `hash_id` varchar(255) NOT NULL DEFAULT '',
@@ -1876,10 +1885,10 @@ CREATE TABLE `ljjbw_template_overrides` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ljjbw_template_styles`
+-- Table structure for table `twp7l_template_styles`
 --
 
-CREATE TABLE `ljjbw_template_styles` (
+CREATE TABLE `twp7l_template_styles` (
   `id` int(10) UNSIGNED NOT NULL,
   `template` varchar(50) NOT NULL DEFAULT '',
   `client_id` tinyint(3) UNSIGNED NOT NULL DEFAULT 0,
@@ -1891,20 +1900,20 @@ CREATE TABLE `ljjbw_template_styles` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `ljjbw_template_styles`
+-- Dumping data for table `twp7l_template_styles`
 --
 
-INSERT INTO `ljjbw_template_styles` (`id`, `template`, `client_id`, `home`, `title`, `inheritable`, `parent`, `params`) VALUES
+INSERT INTO `twp7l_template_styles` (`id`, `template`, `client_id`, `home`, `title`, `inheritable`, `parent`, `params`) VALUES
 (10, 'atum', 1, '1', 'Atum - Default', 1, '', '{\"hue\":\"hsl(214, 63%, 20%)\",\"bg-light\":\"#f0f4fb\",\"text-dark\":\"#495057\",\"text-light\":\"#ffffff\",\"link-color\":\"#2a69b8\",\"special-color\":\"#001b4c\",\"monochrome\":\"0\",\"loginLogo\":\"\",\"loginLogoAlt\":\"\",\"logoBrandLarge\":\"\",\"logoBrandLargeAlt\":\"\",\"logoBrandSmall\":\"\",\"logoBrandSmallAlt\":\"\"}'),
 (11, 'cassiopeia', 0, '1', 'Cassiopeia - Default', 1, '', '{\"brand\":\"1\",\"logoFile\":\"\",\"siteTitle\":\"\",\"siteDescription\":\"\",\"useFontScheme\":\"0\",\"colorName\":\"colors_standard\",\"fluidContainer\":\"0\",\"stickyHeader\":0,\"backTop\":0}');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ljjbw_ucm_base`
+-- Table structure for table `twp7l_ucm_base`
 --
 
-CREATE TABLE `ljjbw_ucm_base` (
+CREATE TABLE `twp7l_ucm_base` (
   `ucm_id` int(10) UNSIGNED NOT NULL,
   `ucm_item_id` int(11) NOT NULL,
   `ucm_type_id` int(11) NOT NULL,
@@ -1914,10 +1923,10 @@ CREATE TABLE `ljjbw_ucm_base` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ljjbw_ucm_content`
+-- Table structure for table `twp7l_ucm_content`
 --
 
-CREATE TABLE `ljjbw_ucm_content` (
+CREATE TABLE `twp7l_ucm_content` (
   `core_content_id` int(10) UNSIGNED NOT NULL,
   `core_type_alias` varchar(400) NOT NULL DEFAULT '' COMMENT 'FK to the content types table',
   `core_title` varchar(400) NOT NULL DEFAULT '',
@@ -1954,10 +1963,10 @@ CREATE TABLE `ljjbw_ucm_content` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ljjbw_updates`
+-- Table structure for table `twp7l_updates`
 --
 
-CREATE TABLE `ljjbw_updates` (
+CREATE TABLE `twp7l_updates` (
   `update_id` int(11) NOT NULL,
   `update_site_id` int(11) DEFAULT 0,
   `extension_id` int(11) DEFAULT 0,
@@ -1976,67 +1985,67 @@ CREATE TABLE `ljjbw_updates` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Available Updates';
 
 --
--- Dumping data for table `ljjbw_updates`
+-- Dumping data for table `twp7l_updates`
 --
 
-INSERT INTO `ljjbw_updates` (`update_id`, `update_site_id`, `extension_id`, `name`, `description`, `element`, `type`, `folder`, `client_id`, `version`, `data`, `detailsurl`, `infourl`, `changelogurl`, `extra_query`) VALUES
-(99, 2, 0, 'Afrikaans', '', 'pkg_af-ZA', 'package', '', 0, '4.2.8.1', '', 'https://update.joomla.org/language/details4/af-ZA_details.xml', '', '', ''),
-(100, 2, 0, 'Arabic Unitag', '', 'pkg_ar-AA', 'package', '', 0, '4.0.2.1', '', 'https://update.joomla.org/language/details4/ar-AA_details.xml', '', '', ''),
-(101, 2, 0, 'Bulgarian', '', 'pkg_bg-BG', 'package', '', 0, '4.2.7.1', '', 'https://update.joomla.org/language/details4/bg-BG_details.xml', '', '', ''),
-(102, 2, 0, 'Catalan', '', 'pkg_ca-ES', 'package', '', 0, '4.0.4.2', '', 'https://update.joomla.org/language/details4/ca-ES_details.xml', '', '', ''),
-(103, 2, 0, 'Chinese, Simplified', '', 'pkg_zh-CN', 'package', '', 0, '4.2.0.1', '', 'https://update.joomla.org/language/details4/zh-CN_details.xml', '', '', ''),
-(104, 2, 0, 'Chinese, Traditional', '', 'pkg_zh-TW', 'package', '', 0, '4.2.3.1', '', 'https://update.joomla.org/language/details4/zh-TW_details.xml', '', '', ''),
-(105, 2, 0, 'Czech', '', 'pkg_cs-CZ', 'package', '', 0, '4.2.0.1', '', 'https://update.joomla.org/language/details4/cs-CZ_details.xml', '', '', ''),
-(106, 2, 0, 'Danish', '', 'pkg_da-DK', 'package', '', 0, '4.2.7.1', '', 'https://update.joomla.org/language/details4/da-DK_details.xml', '', '', ''),
-(107, 2, 0, 'Dutch', '', 'pkg_nl-NL', 'package', '', 0, '4.2.7.1', '', 'https://update.joomla.org/language/details4/nl-NL_details.xml', '', '', ''),
-(108, 2, 0, 'English, Australia', '', 'pkg_en-AU', 'package', '', 0, '4.2.8.2', '', 'https://update.joomla.org/language/details4/en-AU_details.xml', '', '', ''),
-(109, 2, 0, 'English, Canada', '', 'pkg_en-CA', 'package', '', 0, '4.2.8.1', '', 'https://update.joomla.org/language/details4/en-CA_details.xml', '', '', ''),
-(110, 2, 0, 'English, New Zealand', '', 'pkg_en-NZ', 'package', '', 0, '4.2.8.1', '', 'https://update.joomla.org/language/details4/en-NZ_details.xml', '', '', ''),
-(111, 2, 0, 'English, USA', '', 'pkg_en-US', 'package', '', 0, '4.2.8.1', '', 'https://update.joomla.org/language/details4/en-US_details.xml', '', '', ''),
-(112, 2, 0, 'Estonian', '', 'pkg_et-EE', 'package', '', 0, '4.2.7.3', '', 'https://update.joomla.org/language/details4/et-EE_details.xml', '', '', ''),
-(113, 2, 0, 'Finnish', '', 'pkg_fi-FI', 'package', '', 0, '4.1.1.2', '', 'https://update.joomla.org/language/details4/fi-FI_details.xml', '', '', ''),
-(114, 2, 0, 'Flemish', '', 'pkg_nl-BE', 'package', '', 0, '4.2.6.1', '', 'https://update.joomla.org/language/details4/nl-BE_details.xml', '', '', ''),
-(115, 2, 0, 'French', '', 'pkg_fr-FR', 'package', '', 0, '4.2.8.1', '', 'https://update.joomla.org/language/details4/fr-FR_details.xml', '', '', ''),
-(116, 2, 0, 'Georgian', '', 'pkg_ka-GE', 'package', '', 0, '4.2.8.1', '', 'https://update.joomla.org/language/details4/ka-GE_details.xml', '', '', ''),
-(117, 2, 0, 'German', '', 'pkg_de-DE', 'package', '', 0, '4.2.8.1', '', 'https://update.joomla.org/language/details4/de-DE_details.xml', '', '', ''),
-(118, 2, 0, 'German, Austria', '', 'pkg_de-AT', 'package', '', 0, '4.2.8.1', '', 'https://update.joomla.org/language/details4/de-AT_details.xml', '', '', ''),
-(119, 2, 0, 'German, Liechtenstein', '', 'pkg_de-LI', 'package', '', 0, '4.2.8.1', '', 'https://update.joomla.org/language/details4/de-LI_details.xml', '', '', ''),
-(120, 2, 0, 'German, Luxembourg', '', 'pkg_de-LU', 'package', '', 0, '4.2.8.1', '', 'https://update.joomla.org/language/details4/de-LU_details.xml', '', '', ''),
-(121, 2, 0, 'German, Switzerland', '', 'pkg_de-CH', 'package', '', 0, '4.2.8.1', '', 'https://update.joomla.org/language/details4/de-CH_details.xml', '', '', ''),
-(122, 2, 0, 'Greek', '', 'pkg_el-GR', 'package', '', 0, '4.2.8.1', '', 'https://update.joomla.org/language/details4/el-GR_details.xml', '', '', ''),
-(123, 2, 0, 'Hungarian', '', 'pkg_hu-HU', 'package', '', 0, '4.2.7.1', '', 'https://update.joomla.org/language/details4/hu-HU_details.xml', '', '', ''),
-(124, 2, 0, 'Italian', '', 'pkg_it-IT', 'package', '', 0, '4.2.8.1', '', 'https://update.joomla.org/language/details4/it-IT_details.xml', '', '', ''),
-(125, 2, 0, 'Japanese', '', 'pkg_ja-JP', 'package', '', 0, '4.2.8.1', '', 'https://update.joomla.org/language/details4/ja-JP_details.xml', '', '', ''),
-(126, 2, 0, 'Kazakh', '', 'pkg_kk-KZ', 'package', '', 0, '4.1.2.1', '', 'https://update.joomla.org/language/details4/kk-KZ_details.xml', '', '', ''),
-(127, 2, 0, 'Lithuanian', '', 'pkg_lt-LT', 'package', '', 0, '4.2.6.1', '', 'https://update.joomla.org/language/details4/lt-LT_details.xml', '', '', ''),
-(128, 2, 0, 'Macedonian', '', 'pkg_mk-MK', 'package', '', 0, '4.2.4.1', '', 'https://update.joomla.org/language/details4/mk-MK_details.xml', '', '', ''),
-(129, 2, 0, 'Norwegian Bokmål', '', 'pkg_nb-NO', 'package', '', 0, '4.0.1.1', '', 'https://update.joomla.org/language/details4/nb-NO_details.xml', '', '', ''),
-(130, 2, 0, 'Persian Farsi', '', 'pkg_fa-IR', 'package', '', 0, '4.2.8.1', '', 'https://update.joomla.org/language/details4/fa-IR_details.xml', '', '', ''),
-(131, 2, 0, 'Polish', '', 'pkg_pl-PL', 'package', '', 0, '4.2.2.4', '', 'https://update.joomla.org/language/details4/pl-PL_details.xml', '', '', ''),
-(132, 2, 0, 'Portuguese, Brazil', '', 'pkg_pt-BR', 'package', '', 0, '4.0.3.1', '', 'https://update.joomla.org/language/details4/pt-BR_details.xml', '', '', ''),
-(133, 2, 0, 'Portuguese, Portugal', '', 'pkg_pt-PT', 'package', '', 0, '4.0.0-rc4.2', '', 'https://update.joomla.org/language/details4/pt-PT_details.xml', '', '', ''),
-(134, 2, 0, 'Romanian', '', 'pkg_ro-RO', 'package', '', 0, '4.2.7.1', '', 'https://update.joomla.org/language/details4/ro-RO_details.xml', '', '', ''),
-(135, 2, 0, 'Russian', '', 'pkg_ru-RU', 'package', '', 0, '4.2.7.1', '', 'https://update.joomla.org/language/details4/ru-RU_details.xml', '', '', ''),
-(136, 2, 0, 'Serbian, Cyrillic', '', 'pkg_sr-RS', 'package', '', 0, '4.2.7.1', '', 'https://update.joomla.org/language/details4/sr-RS_details.xml', '', '', ''),
-(137, 2, 0, 'Serbian, Latin', '', 'pkg_sr-YU', 'package', '', 0, '4.2.5.1', '', 'https://update.joomla.org/language/details4/sr-YU_details.xml', '', '', ''),
-(138, 2, 0, 'Slovak', '', 'pkg_sk-SK', 'package', '', 0, '4.0.6.1', '', 'https://update.joomla.org/language/details4/sk-SK_details.xml', '', '', ''),
-(139, 2, 0, 'Slovenian', '', 'pkg_sl-SI', 'package', '', 0, '4.2.8.1', '', 'https://update.joomla.org/language/details4/sl-SI_details.xml', '', '', ''),
-(140, 2, 0, 'Spanish', '', 'pkg_es-ES', 'package', '', 0, '4.2.3.1', '', 'https://update.joomla.org/language/details4/es-ES_details.xml', '', '', ''),
-(141, 2, 0, 'Swedish', '', 'pkg_sv-SE', 'package', '', 0, '4.2.8.1', '', 'https://update.joomla.org/language/details4/sv-SE_details.xml', '', '', ''),
-(142, 2, 0, 'Tamil, India', '', 'pkg_ta-IN', 'package', '', 0, '4.2.7.1', '', 'https://update.joomla.org/language/details4/ta-IN_details.xml', '', '', ''),
-(143, 2, 0, 'Thai', '', 'pkg_th-TH', 'package', '', 0, '4.2.8.1', '', 'https://update.joomla.org/language/details4/th-TH_details.xml', '', '', ''),
-(144, 2, 0, 'Turkish', '', 'pkg_tr-TR', 'package', '', 0, '4.2.8.1', '', 'https://update.joomla.org/language/details4/tr-TR_details.xml', '', '', ''),
-(145, 2, 0, 'Ukrainian', '', 'pkg_uk-UA', 'package', '', 0, '4.2.5.1', '', 'https://update.joomla.org/language/details4/uk-UA_details.xml', '', '', ''),
-(146, 2, 0, 'Vietnamese', '', 'pkg_vi-VN', 'package', '', 0, '4.2.2.1', '', 'https://update.joomla.org/language/details4/vi-VN_details.xml', '', '', ''),
-(147, 2, 0, 'Welsh', '', 'pkg_cy-GB', 'package', '', 0, '4.2.8.1', '', 'https://update.joomla.org/language/details4/cy-GB_details.xml', '', '', '');
+INSERT INTO `twp7l_updates` (`update_id`, `update_site_id`, `extension_id`, `name`, `description`, `element`, `type`, `folder`, `client_id`, `version`, `data`, `detailsurl`, `infourl`, `changelogurl`, `extra_query`) VALUES
+(1, 2, 0, 'Afrikaans', '', 'pkg_af-ZA', 'package', '', 0, '4.2.8.1', '', 'https://update.joomla.org/language/details4/af-ZA_details.xml', '', '', ''),
+(2, 2, 0, 'Arabic Unitag', '', 'pkg_ar-AA', 'package', '', 0, '4.0.2.1', '', 'https://update.joomla.org/language/details4/ar-AA_details.xml', '', '', ''),
+(3, 2, 0, 'Bulgarian', '', 'pkg_bg-BG', 'package', '', 0, '4.2.7.1', '', 'https://update.joomla.org/language/details4/bg-BG_details.xml', '', '', ''),
+(4, 2, 0, 'Catalan', '', 'pkg_ca-ES', 'package', '', 0, '4.0.4.2', '', 'https://update.joomla.org/language/details4/ca-ES_details.xml', '', '', ''),
+(5, 2, 0, 'Chinese, Simplified', '', 'pkg_zh-CN', 'package', '', 0, '4.2.0.1', '', 'https://update.joomla.org/language/details4/zh-CN_details.xml', '', '', ''),
+(6, 2, 0, 'Chinese, Traditional', '', 'pkg_zh-TW', 'package', '', 0, '4.2.3.1', '', 'https://update.joomla.org/language/details4/zh-TW_details.xml', '', '', ''),
+(7, 2, 0, 'Czech', '', 'pkg_cs-CZ', 'package', '', 0, '4.2.0.1', '', 'https://update.joomla.org/language/details4/cs-CZ_details.xml', '', '', ''),
+(8, 2, 0, 'Danish', '', 'pkg_da-DK', 'package', '', 0, '4.2.7.1', '', 'https://update.joomla.org/language/details4/da-DK_details.xml', '', '', ''),
+(9, 2, 0, 'Dutch', '', 'pkg_nl-NL', 'package', '', 0, '4.2.7.1', '', 'https://update.joomla.org/language/details4/nl-NL_details.xml', '', '', ''),
+(10, 2, 0, 'English, Australia', '', 'pkg_en-AU', 'package', '', 0, '4.2.8.2', '', 'https://update.joomla.org/language/details4/en-AU_details.xml', '', '', ''),
+(11, 2, 0, 'English, Canada', '', 'pkg_en-CA', 'package', '', 0, '4.2.8.1', '', 'https://update.joomla.org/language/details4/en-CA_details.xml', '', '', ''),
+(12, 2, 0, 'English, New Zealand', '', 'pkg_en-NZ', 'package', '', 0, '4.2.8.1', '', 'https://update.joomla.org/language/details4/en-NZ_details.xml', '', '', ''),
+(13, 2, 0, 'English, USA', '', 'pkg_en-US', 'package', '', 0, '4.2.8.1', '', 'https://update.joomla.org/language/details4/en-US_details.xml', '', '', ''),
+(14, 2, 0, 'Estonian', '', 'pkg_et-EE', 'package', '', 0, '4.2.7.3', '', 'https://update.joomla.org/language/details4/et-EE_details.xml', '', '', ''),
+(15, 2, 0, 'Finnish', '', 'pkg_fi-FI', 'package', '', 0, '4.1.1.2', '', 'https://update.joomla.org/language/details4/fi-FI_details.xml', '', '', ''),
+(16, 2, 0, 'Flemish', '', 'pkg_nl-BE', 'package', '', 0, '4.2.6.1', '', 'https://update.joomla.org/language/details4/nl-BE_details.xml', '', '', ''),
+(17, 2, 0, 'French', '', 'pkg_fr-FR', 'package', '', 0, '4.2.8.1', '', 'https://update.joomla.org/language/details4/fr-FR_details.xml', '', '', ''),
+(18, 2, 0, 'Georgian', '', 'pkg_ka-GE', 'package', '', 0, '4.2.8.1', '', 'https://update.joomla.org/language/details4/ka-GE_details.xml', '', '', ''),
+(19, 2, 0, 'German', '', 'pkg_de-DE', 'package', '', 0, '4.2.8.1', '', 'https://update.joomla.org/language/details4/de-DE_details.xml', '', '', ''),
+(20, 2, 0, 'German, Austria', '', 'pkg_de-AT', 'package', '', 0, '4.2.8.1', '', 'https://update.joomla.org/language/details4/de-AT_details.xml', '', '', ''),
+(21, 2, 0, 'German, Liechtenstein', '', 'pkg_de-LI', 'package', '', 0, '4.2.8.1', '', 'https://update.joomla.org/language/details4/de-LI_details.xml', '', '', ''),
+(22, 2, 0, 'German, Luxembourg', '', 'pkg_de-LU', 'package', '', 0, '4.2.8.1', '', 'https://update.joomla.org/language/details4/de-LU_details.xml', '', '', ''),
+(23, 2, 0, 'German, Switzerland', '', 'pkg_de-CH', 'package', '', 0, '4.2.8.1', '', 'https://update.joomla.org/language/details4/de-CH_details.xml', '', '', ''),
+(24, 2, 0, 'Greek', '', 'pkg_el-GR', 'package', '', 0, '4.2.8.1', '', 'https://update.joomla.org/language/details4/el-GR_details.xml', '', '', ''),
+(25, 2, 0, 'Hungarian', '', 'pkg_hu-HU', 'package', '', 0, '4.2.7.1', '', 'https://update.joomla.org/language/details4/hu-HU_details.xml', '', '', ''),
+(26, 2, 0, 'Italian', '', 'pkg_it-IT', 'package', '', 0, '4.2.8.1', '', 'https://update.joomla.org/language/details4/it-IT_details.xml', '', '', ''),
+(27, 2, 0, 'Japanese', '', 'pkg_ja-JP', 'package', '', 0, '4.2.8.1', '', 'https://update.joomla.org/language/details4/ja-JP_details.xml', '', '', ''),
+(28, 2, 0, 'Kazakh', '', 'pkg_kk-KZ', 'package', '', 0, '4.1.2.1', '', 'https://update.joomla.org/language/details4/kk-KZ_details.xml', '', '', ''),
+(29, 2, 0, 'Lithuanian', '', 'pkg_lt-LT', 'package', '', 0, '4.2.6.1', '', 'https://update.joomla.org/language/details4/lt-LT_details.xml', '', '', ''),
+(30, 2, 0, 'Macedonian', '', 'pkg_mk-MK', 'package', '', 0, '4.2.4.1', '', 'https://update.joomla.org/language/details4/mk-MK_details.xml', '', '', ''),
+(31, 2, 0, 'Norwegian Bokmål', '', 'pkg_nb-NO', 'package', '', 0, '4.0.1.1', '', 'https://update.joomla.org/language/details4/nb-NO_details.xml', '', '', ''),
+(32, 2, 0, 'Persian Farsi', '', 'pkg_fa-IR', 'package', '', 0, '4.2.8.1', '', 'https://update.joomla.org/language/details4/fa-IR_details.xml', '', '', ''),
+(33, 2, 0, 'Polish', '', 'pkg_pl-PL', 'package', '', 0, '4.2.2.4', '', 'https://update.joomla.org/language/details4/pl-PL_details.xml', '', '', ''),
+(34, 2, 0, 'Portuguese, Brazil', '', 'pkg_pt-BR', 'package', '', 0, '4.0.3.1', '', 'https://update.joomla.org/language/details4/pt-BR_details.xml', '', '', ''),
+(35, 2, 0, 'Portuguese, Portugal', '', 'pkg_pt-PT', 'package', '', 0, '4.0.0-rc4.2', '', 'https://update.joomla.org/language/details4/pt-PT_details.xml', '', '', ''),
+(36, 2, 0, 'Romanian', '', 'pkg_ro-RO', 'package', '', 0, '4.2.7.1', '', 'https://update.joomla.org/language/details4/ro-RO_details.xml', '', '', ''),
+(37, 2, 0, 'Russian', '', 'pkg_ru-RU', 'package', '', 0, '4.2.7.1', '', 'https://update.joomla.org/language/details4/ru-RU_details.xml', '', '', ''),
+(38, 2, 0, 'Serbian, Cyrillic', '', 'pkg_sr-RS', 'package', '', 0, '4.2.7.1', '', 'https://update.joomla.org/language/details4/sr-RS_details.xml', '', '', ''),
+(39, 2, 0, 'Serbian, Latin', '', 'pkg_sr-YU', 'package', '', 0, '4.2.5.1', '', 'https://update.joomla.org/language/details4/sr-YU_details.xml', '', '', ''),
+(40, 2, 0, 'Slovak', '', 'pkg_sk-SK', 'package', '', 0, '4.0.6.1', '', 'https://update.joomla.org/language/details4/sk-SK_details.xml', '', '', ''),
+(41, 2, 0, 'Slovenian', '', 'pkg_sl-SI', 'package', '', 0, '4.2.8.1', '', 'https://update.joomla.org/language/details4/sl-SI_details.xml', '', '', ''),
+(42, 2, 0, 'Spanish', '', 'pkg_es-ES', 'package', '', 0, '4.2.3.1', '', 'https://update.joomla.org/language/details4/es-ES_details.xml', '', '', ''),
+(43, 2, 0, 'Swedish', '', 'pkg_sv-SE', 'package', '', 0, '4.2.8.1', '', 'https://update.joomla.org/language/details4/sv-SE_details.xml', '', '', ''),
+(44, 2, 0, 'Tamil, India', '', 'pkg_ta-IN', 'package', '', 0, '4.2.7.1', '', 'https://update.joomla.org/language/details4/ta-IN_details.xml', '', '', ''),
+(45, 2, 0, 'Thai', '', 'pkg_th-TH', 'package', '', 0, '4.2.8.1', '', 'https://update.joomla.org/language/details4/th-TH_details.xml', '', '', ''),
+(46, 2, 0, 'Turkish', '', 'pkg_tr-TR', 'package', '', 0, '4.2.8.1', '', 'https://update.joomla.org/language/details4/tr-TR_details.xml', '', '', ''),
+(47, 2, 0, 'Ukrainian', '', 'pkg_uk-UA', 'package', '', 0, '4.2.5.1', '', 'https://update.joomla.org/language/details4/uk-UA_details.xml', '', '', ''),
+(48, 2, 0, 'Vietnamese', '', 'pkg_vi-VN', 'package', '', 0, '4.2.2.1', '', 'https://update.joomla.org/language/details4/vi-VN_details.xml', '', '', ''),
+(49, 2, 0, 'Welsh', '', 'pkg_cy-GB', 'package', '', 0, '4.2.8.1', '', 'https://update.joomla.org/language/details4/cy-GB_details.xml', '', '', '');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ljjbw_update_sites`
+-- Table structure for table `twp7l_update_sites`
 --
 
-CREATE TABLE `ljjbw_update_sites` (
+CREATE TABLE `twp7l_update_sites` (
   `update_site_id` int(11) NOT NULL,
   `name` varchar(100) DEFAULT '',
   `type` varchar(20) DEFAULT '',
@@ -2049,30 +2058,30 @@ CREATE TABLE `ljjbw_update_sites` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Update Sites';
 
 --
--- Dumping data for table `ljjbw_update_sites`
+-- Dumping data for table `twp7l_update_sites`
 --
 
-INSERT INTO `ljjbw_update_sites` (`update_site_id`, `name`, `type`, `location`, `enabled`, `last_check_timestamp`, `extra_query`, `checked_out`, `checked_out_time`) VALUES
-(1, 'Joomla! Core', 'collection', 'https://update.joomla.org/core/list.xml', 1, 1677465356, '', NULL, NULL),
-(2, 'Accredited Joomla! Translations', 'collection', 'https://update.joomla.org/language/translationlist_4.xml', 1, 1677465314, '', NULL, NULL),
-(3, 'Joomla! Update Component', 'extension', 'https://update.joomla.org/core/extensions/com_joomlaupdate.xml', 1, 0, '', NULL, NULL);
+INSERT INTO `twp7l_update_sites` (`update_site_id`, `name`, `type`, `location`, `enabled`, `last_check_timestamp`, `extra_query`, `checked_out`, `checked_out_time`) VALUES
+(1, 'Joomla! Core', 'collection', 'https://update.joomla.org/core/list.xml', 1, 1677471264, '', NULL, NULL),
+(2, 'Accredited Joomla! Translations', 'collection', 'https://update.joomla.org/language/translationlist_4.xml', 1, 1677471260, '', NULL, NULL),
+(3, 'Joomla! Update Component', 'extension', 'https://update.joomla.org/core/extensions/com_joomlaupdate.xml', 1, 1677471299, '', NULL, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ljjbw_update_sites_extensions`
+-- Table structure for table `twp7l_update_sites_extensions`
 --
 
-CREATE TABLE `ljjbw_update_sites_extensions` (
+CREATE TABLE `twp7l_update_sites_extensions` (
   `update_site_id` int(11) NOT NULL DEFAULT 0,
   `extension_id` int(11) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Links extensions to update sites';
 
 --
--- Dumping data for table `ljjbw_update_sites_extensions`
+-- Dumping data for table `twp7l_update_sites_extensions`
 --
 
-INSERT INTO `ljjbw_update_sites_extensions` (`update_site_id`, `extension_id`) VALUES
+INSERT INTO `twp7l_update_sites_extensions` (`update_site_id`, `extension_id`) VALUES
 (1, 224),
 (2, 225),
 (3, 24);
@@ -2080,10 +2089,10 @@ INSERT INTO `ljjbw_update_sites_extensions` (`update_site_id`, `extension_id`) V
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ljjbw_usergroups`
+-- Table structure for table `twp7l_usergroups`
 --
 
-CREATE TABLE `ljjbw_usergroups` (
+CREATE TABLE `twp7l_usergroups` (
   `id` int(10) UNSIGNED NOT NULL COMMENT 'Primary Key',
   `parent_id` int(10) UNSIGNED NOT NULL DEFAULT 0 COMMENT 'Adjacency List Reference Id',
   `lft` int(11) NOT NULL DEFAULT 0 COMMENT 'Nested set lft.',
@@ -2092,10 +2101,10 @@ CREATE TABLE `ljjbw_usergroups` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `ljjbw_usergroups`
+-- Dumping data for table `twp7l_usergroups`
 --
 
-INSERT INTO `ljjbw_usergroups` (`id`, `parent_id`, `lft`, `rgt`, `title`) VALUES
+INSERT INTO `twp7l_usergroups` (`id`, `parent_id`, `lft`, `rgt`, `title`) VALUES
 (1, 0, 1, 18, 'Public'),
 (2, 1, 8, 15, 'Registered'),
 (3, 2, 9, 14, 'Author'),
@@ -2109,10 +2118,10 @@ INSERT INTO `ljjbw_usergroups` (`id`, `parent_id`, `lft`, `rgt`, `title`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ljjbw_users`
+-- Table structure for table `twp7l_users`
 --
 
-CREATE TABLE `ljjbw_users` (
+CREATE TABLE `twp7l_users` (
   `id` int(11) NOT NULL,
   `name` varchar(400) NOT NULL DEFAULT '',
   `username` varchar(150) NOT NULL DEFAULT '',
@@ -2133,19 +2142,19 @@ CREATE TABLE `ljjbw_users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `ljjbw_users`
+-- Dumping data for table `twp7l_users`
 --
 
-INSERT INTO `ljjbw_users` (`id`, `name`, `username`, `email`, `password`, `block`, `sendEmail`, `registerDate`, `lastvisitDate`, `activation`, `params`, `lastResetTime`, `resetCount`, `otpKey`, `otep`, `requireReset`, `authProvider`) VALUES
-(485, 'Administrator', 'administrator', 'admin@localhost.tld', '$2y$10$URaOvpBAT0sNqnA9KT1cRu6yg4rDn52mBAhY5sHCJlp2iB4ji96ua', 0, 1, '2023-02-27 02:34:17', NULL, '0', '', NULL, 0, '', '', 0, '');
+INSERT INTO `twp7l_users` (`id`, `name`, `username`, `email`, `password`, `block`, `sendEmail`, `registerDate`, `lastvisitDate`, `activation`, `params`, `lastResetTime`, `resetCount`, `otpKey`, `otep`, `requireReset`, `authProvider`) VALUES
+(593, 'Administrator', 'administrator', 'admin@localhost.tld', '$2y$10$uGTOrwgd/alpTbzPb6fepefrRVmC0lKYsmVugx/n.d3BYhQ42QiKm', 0, 1, '2023-02-27 04:14:20', '2023-02-27 04:14:58', '0', '', NULL, 0, '', '', 0, '');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ljjbw_user_keys`
+-- Table structure for table `twp7l_user_keys`
 --
 
-CREATE TABLE `ljjbw_user_keys` (
+CREATE TABLE `twp7l_user_keys` (
   `id` int(10) UNSIGNED NOT NULL,
   `user_id` varchar(150) NOT NULL,
   `token` varchar(255) NOT NULL,
@@ -2157,10 +2166,10 @@ CREATE TABLE `ljjbw_user_keys` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ljjbw_user_mfa`
+-- Table structure for table `twp7l_user_mfa`
 --
 
-CREATE TABLE `ljjbw_user_mfa` (
+CREATE TABLE `twp7l_user_mfa` (
   `id` int(11) NOT NULL,
   `user_id` int(10) UNSIGNED NOT NULL,
   `title` varchar(255) NOT NULL DEFAULT '',
@@ -2174,10 +2183,10 @@ CREATE TABLE `ljjbw_user_mfa` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ljjbw_user_notes`
+-- Table structure for table `twp7l_user_notes`
 --
 
-CREATE TABLE `ljjbw_user_notes` (
+CREATE TABLE `twp7l_user_notes` (
   `id` int(10) UNSIGNED NOT NULL,
   `user_id` int(10) UNSIGNED NOT NULL DEFAULT 0,
   `catid` int(10) UNSIGNED NOT NULL DEFAULT 0,
@@ -2198,10 +2207,10 @@ CREATE TABLE `ljjbw_user_notes` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ljjbw_user_profiles`
+-- Table structure for table `twp7l_user_profiles`
 --
 
-CREATE TABLE `ljjbw_user_profiles` (
+CREATE TABLE `twp7l_user_profiles` (
   `user_id` int(11) NOT NULL,
   `profile_key` varchar(100) NOT NULL,
   `profile_value` text NOT NULL,
@@ -2211,28 +2220,28 @@ CREATE TABLE `ljjbw_user_profiles` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ljjbw_user_usergroup_map`
+-- Table structure for table `twp7l_user_usergroup_map`
 --
 
-CREATE TABLE `ljjbw_user_usergroup_map` (
+CREATE TABLE `twp7l_user_usergroup_map` (
   `user_id` int(10) UNSIGNED NOT NULL DEFAULT 0 COMMENT 'Foreign Key to #__users.id',
   `group_id` int(10) UNSIGNED NOT NULL DEFAULT 0 COMMENT 'Foreign Key to #__usergroups.id'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `ljjbw_user_usergroup_map`
+-- Dumping data for table `twp7l_user_usergroup_map`
 --
 
-INSERT INTO `ljjbw_user_usergroup_map` (`user_id`, `group_id`) VALUES
-(485, 8);
+INSERT INTO `twp7l_user_usergroup_map` (`user_id`, `group_id`) VALUES
+(593, 8);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ljjbw_viewlevels`
+-- Table structure for table `twp7l_viewlevels`
 --
 
-CREATE TABLE `ljjbw_viewlevels` (
+CREATE TABLE `twp7l_viewlevels` (
   `id` int(10) UNSIGNED NOT NULL COMMENT 'Primary Key',
   `title` varchar(100) NOT NULL DEFAULT '',
   `ordering` int(11) NOT NULL DEFAULT 0,
@@ -2240,10 +2249,10 @@ CREATE TABLE `ljjbw_viewlevels` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `ljjbw_viewlevels`
+-- Dumping data for table `twp7l_viewlevels`
 --
 
-INSERT INTO `ljjbw_viewlevels` (`id`, `title`, `ordering`, `rules`) VALUES
+INSERT INTO `twp7l_viewlevels` (`id`, `title`, `ordering`, `rules`) VALUES
 (1, 'Public', 0, '[1]'),
 (2, 'Registered', 2, '[6,2,8]'),
 (3, 'Special', 3, '[6,3,8]'),
@@ -2253,10 +2262,10 @@ INSERT INTO `ljjbw_viewlevels` (`id`, `title`, `ordering`, `rules`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ljjbw_webauthn_credentials`
+-- Table structure for table `twp7l_webauthn_credentials`
 --
 
-CREATE TABLE `ljjbw_webauthn_credentials` (
+CREATE TABLE `twp7l_webauthn_credentials` (
   `id` varchar(1000) NOT NULL COMMENT 'Credential ID',
   `user_id` varchar(128) NOT NULL COMMENT 'User handle',
   `label` varchar(190) NOT NULL COMMENT 'Human readable label',
@@ -2266,10 +2275,10 @@ CREATE TABLE `ljjbw_webauthn_credentials` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ljjbw_workflows`
+-- Table structure for table `twp7l_workflows`
 --
 
-CREATE TABLE `ljjbw_workflows` (
+CREATE TABLE `twp7l_workflows` (
   `id` int(11) NOT NULL,
   `asset_id` int(11) DEFAULT 0,
   `published` tinyint(4) NOT NULL DEFAULT 0,
@@ -2287,19 +2296,19 @@ CREATE TABLE `ljjbw_workflows` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `ljjbw_workflows`
+-- Dumping data for table `twp7l_workflows`
 --
 
-INSERT INTO `ljjbw_workflows` (`id`, `asset_id`, `published`, `title`, `description`, `extension`, `default`, `ordering`, `created`, `created_by`, `modified`, `modified_by`, `checked_out_time`, `checked_out`) VALUES
-(1, 56, 1, 'COM_WORKFLOW_BASIC_WORKFLOW', '', 'com_content.article', 1, 1, '2023-02-27 02:34:16', 485, '2023-02-27 02:34:16', 485, NULL, NULL);
+INSERT INTO `twp7l_workflows` (`id`, `asset_id`, `published`, `title`, `description`, `extension`, `default`, `ordering`, `created`, `created_by`, `modified`, `modified_by`, `checked_out_time`, `checked_out`) VALUES
+(1, 56, 1, 'COM_WORKFLOW_BASIC_WORKFLOW', '', 'com_content.article', 1, 1, '2023-02-27 04:14:18', 593, '2023-02-27 04:14:18', 593, NULL, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ljjbw_workflow_associations`
+-- Table structure for table `twp7l_workflow_associations`
 --
 
-CREATE TABLE `ljjbw_workflow_associations` (
+CREATE TABLE `twp7l_workflow_associations` (
   `item_id` int(11) NOT NULL DEFAULT 0 COMMENT 'Extension table id value',
   `stage_id` int(11) NOT NULL COMMENT 'Foreign Key to #__workflow_stages.id',
   `extension` varchar(50) NOT NULL
@@ -2308,10 +2317,10 @@ CREATE TABLE `ljjbw_workflow_associations` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ljjbw_workflow_stages`
+-- Table structure for table `twp7l_workflow_stages`
 --
 
-CREATE TABLE `ljjbw_workflow_stages` (
+CREATE TABLE `twp7l_workflow_stages` (
   `id` int(11) NOT NULL,
   `asset_id` int(11) DEFAULT 0,
   `ordering` int(11) NOT NULL DEFAULT 0,
@@ -2325,19 +2334,19 @@ CREATE TABLE `ljjbw_workflow_stages` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `ljjbw_workflow_stages`
+-- Dumping data for table `twp7l_workflow_stages`
 --
 
-INSERT INTO `ljjbw_workflow_stages` (`id`, `asset_id`, `ordering`, `workflow_id`, `published`, `title`, `description`, `default`, `checked_out_time`, `checked_out`) VALUES
+INSERT INTO `twp7l_workflow_stages` (`id`, `asset_id`, `ordering`, `workflow_id`, `published`, `title`, `description`, `default`, `checked_out_time`, `checked_out`) VALUES
 (1, 57, 1, 1, 1, 'COM_WORKFLOW_BASIC_STAGE', '', 1, NULL, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ljjbw_workflow_transitions`
+-- Table structure for table `twp7l_workflow_transitions`
 --
 
-CREATE TABLE `ljjbw_workflow_transitions` (
+CREATE TABLE `twp7l_workflow_transitions` (
   `id` int(11) NOT NULL,
   `asset_id` int(11) DEFAULT 0,
   `ordering` int(11) NOT NULL DEFAULT 0,
@@ -2353,10 +2362,10 @@ CREATE TABLE `ljjbw_workflow_transitions` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `ljjbw_workflow_transitions`
+-- Dumping data for table `twp7l_workflow_transitions`
 --
 
-INSERT INTO `ljjbw_workflow_transitions` (`id`, `asset_id`, `ordering`, `workflow_id`, `published`, `title`, `description`, `from_stage_id`, `to_stage_id`, `options`, `checked_out_time`, `checked_out`) VALUES
+INSERT INTO `twp7l_workflow_transitions` (`id`, `asset_id`, `ordering`, `workflow_id`, `published`, `title`, `description`, `from_stage_id`, `to_stage_id`, `options`, `checked_out_time`, `checked_out`) VALUES
 (1, 58, 1, 1, 1, 'UNPUBLISH', '', -1, 1, '{\"publishing\":\"0\"}', NULL, NULL),
 (2, 59, 2, 1, 1, 'PUBLISH', '', -1, 1, '{\"publishing\":\"1\"}', NULL, NULL),
 (3, 60, 3, 1, 1, 'TRASH', '', -1, 1, '{\"publishing\":\"-2\"}', NULL, NULL),
@@ -2370,9 +2379,9 @@ INSERT INTO `ljjbw_workflow_transitions` (`id`, `asset_id`, `ordering`, `workflo
 --
 
 --
--- Indexes for table `ljjbw_action_logs`
+-- Indexes for table `twp7l_action_logs`
 --
-ALTER TABLE `ljjbw_action_logs`
+ALTER TABLE `twp7l_action_logs`
   ADD PRIMARY KEY (`id`),
   ADD KEY `idx_user_id` (`user_id`),
   ADD KEY `idx_user_id_logdate` (`user_id`,`log_date`),
@@ -2380,44 +2389,44 @@ ALTER TABLE `ljjbw_action_logs`
   ADD KEY `idx_extension_item_id` (`extension`,`item_id`);
 
 --
--- Indexes for table `ljjbw_action_logs_extensions`
+-- Indexes for table `twp7l_action_logs_extensions`
 --
-ALTER TABLE `ljjbw_action_logs_extensions`
+ALTER TABLE `twp7l_action_logs_extensions`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `ljjbw_action_logs_users`
+-- Indexes for table `twp7l_action_logs_users`
 --
-ALTER TABLE `ljjbw_action_logs_users`
+ALTER TABLE `twp7l_action_logs_users`
   ADD PRIMARY KEY (`user_id`),
   ADD KEY `idx_notify` (`notify`);
 
 --
--- Indexes for table `ljjbw_action_log_config`
+-- Indexes for table `twp7l_action_log_config`
 --
-ALTER TABLE `ljjbw_action_log_config`
+ALTER TABLE `twp7l_action_log_config`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `ljjbw_assets`
+-- Indexes for table `twp7l_assets`
 --
-ALTER TABLE `ljjbw_assets`
+ALTER TABLE `twp7l_assets`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `idx_asset_name` (`name`),
   ADD KEY `idx_lft_rgt` (`lft`,`rgt`),
   ADD KEY `idx_parent_id` (`parent_id`);
 
 --
--- Indexes for table `ljjbw_associations`
+-- Indexes for table `twp7l_associations`
 --
-ALTER TABLE `ljjbw_associations`
+ALTER TABLE `twp7l_associations`
   ADD PRIMARY KEY (`context`,`id`),
   ADD KEY `idx_key` (`key`);
 
 --
--- Indexes for table `ljjbw_banners`
+-- Indexes for table `twp7l_banners`
 --
-ALTER TABLE `ljjbw_banners`
+ALTER TABLE `twp7l_banners`
   ADD PRIMARY KEY (`id`),
   ADD KEY `idx_state` (`state`),
   ADD KEY `idx_own_prefix` (`own_prefix`),
@@ -2426,26 +2435,26 @@ ALTER TABLE `ljjbw_banners`
   ADD KEY `idx_language` (`language`);
 
 --
--- Indexes for table `ljjbw_banner_clients`
+-- Indexes for table `twp7l_banner_clients`
 --
-ALTER TABLE `ljjbw_banner_clients`
+ALTER TABLE `twp7l_banner_clients`
   ADD PRIMARY KEY (`id`),
   ADD KEY `idx_own_prefix` (`own_prefix`),
   ADD KEY `idx_metakey_prefix` (`metakey_prefix`(100));
 
 --
--- Indexes for table `ljjbw_banner_tracks`
+-- Indexes for table `twp7l_banner_tracks`
 --
-ALTER TABLE `ljjbw_banner_tracks`
+ALTER TABLE `twp7l_banner_tracks`
   ADD PRIMARY KEY (`track_date`,`track_type`,`banner_id`),
   ADD KEY `idx_track_date` (`track_date`),
   ADD KEY `idx_track_type` (`track_type`),
   ADD KEY `idx_banner_id` (`banner_id`);
 
 --
--- Indexes for table `ljjbw_categories`
+-- Indexes for table `twp7l_categories`
 --
-ALTER TABLE `ljjbw_categories`
+ALTER TABLE `twp7l_categories`
   ADD PRIMARY KEY (`id`),
   ADD KEY `cat_idx` (`extension`,`published`,`access`),
   ADD KEY `idx_access` (`access`),
@@ -2456,9 +2465,9 @@ ALTER TABLE `ljjbw_categories`
   ADD KEY `idx_language` (`language`);
 
 --
--- Indexes for table `ljjbw_contact_details`
+-- Indexes for table `twp7l_contact_details`
 --
-ALTER TABLE `ljjbw_contact_details`
+ALTER TABLE `twp7l_contact_details`
   ADD PRIMARY KEY (`id`),
   ADD KEY `idx_access` (`access`),
   ADD KEY `idx_checkout` (`checked_out`),
@@ -2469,9 +2478,9 @@ ALTER TABLE `ljjbw_contact_details`
   ADD KEY `idx_language` (`language`);
 
 --
--- Indexes for table `ljjbw_content`
+-- Indexes for table `twp7l_content`
 --
-ALTER TABLE `ljjbw_content`
+ALTER TABLE `twp7l_content`
   ADD PRIMARY KEY (`id`),
   ADD KEY `idx_access` (`access`),
   ADD KEY `idx_checkout` (`checked_out`),
@@ -2483,46 +2492,46 @@ ALTER TABLE `ljjbw_content`
   ADD KEY `idx_alias` (`alias`(191));
 
 --
--- Indexes for table `ljjbw_contentitem_tag_map`
+-- Indexes for table `twp7l_contentitem_tag_map`
 --
-ALTER TABLE `ljjbw_contentitem_tag_map`
+ALTER TABLE `twp7l_contentitem_tag_map`
   ADD UNIQUE KEY `uc_ItemnameTagid` (`type_id`,`content_item_id`,`tag_id`),
   ADD KEY `idx_tag_type` (`tag_id`,`type_id`),
   ADD KEY `idx_date_id` (`tag_date`,`tag_id`),
   ADD KEY `idx_core_content_id` (`core_content_id`);
 
 --
--- Indexes for table `ljjbw_content_frontpage`
+-- Indexes for table `twp7l_content_frontpage`
 --
-ALTER TABLE `ljjbw_content_frontpage`
+ALTER TABLE `twp7l_content_frontpage`
   ADD PRIMARY KEY (`content_id`);
 
 --
--- Indexes for table `ljjbw_content_rating`
+-- Indexes for table `twp7l_content_rating`
 --
-ALTER TABLE `ljjbw_content_rating`
+ALTER TABLE `twp7l_content_rating`
   ADD PRIMARY KEY (`content_id`);
 
 --
--- Indexes for table `ljjbw_content_types`
+-- Indexes for table `twp7l_content_types`
 --
-ALTER TABLE `ljjbw_content_types`
+ALTER TABLE `twp7l_content_types`
   ADD PRIMARY KEY (`type_id`),
   ADD KEY `idx_alias` (`type_alias`(100));
 
 --
--- Indexes for table `ljjbw_extensions`
+-- Indexes for table `twp7l_extensions`
 --
-ALTER TABLE `ljjbw_extensions`
+ALTER TABLE `twp7l_extensions`
   ADD PRIMARY KEY (`extension_id`),
   ADD KEY `element_clientid` (`element`,`client_id`),
   ADD KEY `element_folder_clientid` (`element`,`folder`,`client_id`),
   ADD KEY `extension` (`type`,`element`,`folder`,`client_id`);
 
 --
--- Indexes for table `ljjbw_fields`
+-- Indexes for table `twp7l_fields`
 --
-ALTER TABLE `ljjbw_fields`
+ALTER TABLE `twp7l_fields`
   ADD PRIMARY KEY (`id`),
   ADD KEY `idx_checkout` (`checked_out`),
   ADD KEY `idx_state` (`state`),
@@ -2532,15 +2541,15 @@ ALTER TABLE `ljjbw_fields`
   ADD KEY `idx_language` (`language`);
 
 --
--- Indexes for table `ljjbw_fields_categories`
+-- Indexes for table `twp7l_fields_categories`
 --
-ALTER TABLE `ljjbw_fields_categories`
+ALTER TABLE `twp7l_fields_categories`
   ADD PRIMARY KEY (`field_id`,`category_id`);
 
 --
--- Indexes for table `ljjbw_fields_groups`
+-- Indexes for table `twp7l_fields_groups`
 --
-ALTER TABLE `ljjbw_fields_groups`
+ALTER TABLE `twp7l_fields_groups`
   ADD PRIMARY KEY (`id`),
   ADD KEY `idx_checkout` (`checked_out`),
   ADD KEY `idx_state` (`state`),
@@ -2550,22 +2559,22 @@ ALTER TABLE `ljjbw_fields_groups`
   ADD KEY `idx_language` (`language`);
 
 --
--- Indexes for table `ljjbw_fields_values`
+-- Indexes for table `twp7l_fields_values`
 --
-ALTER TABLE `ljjbw_fields_values`
+ALTER TABLE `twp7l_fields_values`
   ADD KEY `idx_field_id` (`field_id`),
   ADD KEY `idx_item_id` (`item_id`(191));
 
 --
--- Indexes for table `ljjbw_finder_filters`
+-- Indexes for table `twp7l_finder_filters`
 --
-ALTER TABLE `ljjbw_finder_filters`
+ALTER TABLE `twp7l_finder_filters`
   ADD PRIMARY KEY (`filter_id`);
 
 --
--- Indexes for table `ljjbw_finder_links`
+-- Indexes for table `twp7l_finder_links`
 --
-ALTER TABLE `ljjbw_finder_links`
+ALTER TABLE `twp7l_finder_links`
   ADD PRIMARY KEY (`link_id`),
   ADD KEY `idx_type` (`type_id`),
   ADD KEY `idx_title` (`title`(100)),
@@ -2576,24 +2585,24 @@ ALTER TABLE `ljjbw_finder_links`
   ADD KEY `idx_published_sale` (`published`,`state`,`access`,`publish_start_date`,`publish_end_date`,`sale_price`);
 
 --
--- Indexes for table `ljjbw_finder_links_terms`
+-- Indexes for table `twp7l_finder_links_terms`
 --
-ALTER TABLE `ljjbw_finder_links_terms`
+ALTER TABLE `twp7l_finder_links_terms`
   ADD PRIMARY KEY (`link_id`,`term_id`),
   ADD KEY `idx_term_weight` (`term_id`,`weight`),
   ADD KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`);
 
 --
--- Indexes for table `ljjbw_finder_logging`
+-- Indexes for table `twp7l_finder_logging`
 --
-ALTER TABLE `ljjbw_finder_logging`
+ALTER TABLE `twp7l_finder_logging`
   ADD PRIMARY KEY (`md5sum`),
   ADD KEY `searchterm` (`searchterm`(191));
 
 --
--- Indexes for table `ljjbw_finder_taxonomy`
+-- Indexes for table `twp7l_finder_taxonomy`
 --
-ALTER TABLE `ljjbw_finder_taxonomy`
+ALTER TABLE `twp7l_finder_taxonomy`
   ADD PRIMARY KEY (`id`),
   ADD KEY `idx_state` (`state`),
   ADD KEY `idx_access` (`access`),
@@ -2605,17 +2614,17 @@ ALTER TABLE `ljjbw_finder_taxonomy`
   ADD KEY `idx_parent_published` (`parent_id`,`state`,`access`);
 
 --
--- Indexes for table `ljjbw_finder_taxonomy_map`
+-- Indexes for table `twp7l_finder_taxonomy_map`
 --
-ALTER TABLE `ljjbw_finder_taxonomy_map`
+ALTER TABLE `twp7l_finder_taxonomy_map`
   ADD PRIMARY KEY (`link_id`,`node_id`),
   ADD KEY `link_id` (`link_id`),
   ADD KEY `node_id` (`node_id`);
 
 --
--- Indexes for table `ljjbw_finder_terms`
+-- Indexes for table `twp7l_finder_terms`
 --
-ALTER TABLE `ljjbw_finder_terms`
+ALTER TABLE `twp7l_finder_terms`
   ADD PRIMARY KEY (`term_id`),
   ADD UNIQUE KEY `idx_term_language` (`term`,`language`),
   ADD KEY `idx_stem` (`stem`),
@@ -2625,47 +2634,47 @@ ALTER TABLE `ljjbw_finder_terms`
   ADD KEY `idx_language` (`language`);
 
 --
--- Indexes for table `ljjbw_finder_terms_common`
+-- Indexes for table `twp7l_finder_terms_common`
 --
-ALTER TABLE `ljjbw_finder_terms_common`
+ALTER TABLE `twp7l_finder_terms_common`
   ADD UNIQUE KEY `idx_term_language` (`term`,`language`),
   ADD KEY `idx_lang` (`language`);
 
 --
--- Indexes for table `ljjbw_finder_tokens`
+-- Indexes for table `twp7l_finder_tokens`
 --
-ALTER TABLE `ljjbw_finder_tokens`
+ALTER TABLE `twp7l_finder_tokens`
   ADD KEY `idx_word` (`term`),
   ADD KEY `idx_stem` (`stem`),
   ADD KEY `idx_context` (`context`),
   ADD KEY `idx_language` (`language`);
 
 --
--- Indexes for table `ljjbw_finder_tokens_aggregate`
+-- Indexes for table `twp7l_finder_tokens_aggregate`
 --
-ALTER TABLE `ljjbw_finder_tokens_aggregate`
+ALTER TABLE `twp7l_finder_tokens_aggregate`
   ADD KEY `token` (`term`),
   ADD KEY `keyword_id` (`term_id`);
 
 --
--- Indexes for table `ljjbw_finder_types`
+-- Indexes for table `twp7l_finder_types`
 --
-ALTER TABLE `ljjbw_finder_types`
+ALTER TABLE `twp7l_finder_types`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `title` (`title`);
 
 --
--- Indexes for table `ljjbw_history`
+-- Indexes for table `twp7l_history`
 --
-ALTER TABLE `ljjbw_history`
+ALTER TABLE `twp7l_history`
   ADD PRIMARY KEY (`version_id`),
   ADD KEY `idx_ucm_item_id` (`item_id`),
   ADD KEY `idx_save_date` (`save_date`);
 
 --
--- Indexes for table `ljjbw_languages`
+-- Indexes for table `twp7l_languages`
 --
-ALTER TABLE `ljjbw_languages`
+ALTER TABLE `twp7l_languages`
   ADD PRIMARY KEY (`lang_id`),
   ADD UNIQUE KEY `idx_sef` (`sef`),
   ADD UNIQUE KEY `idx_langcode` (`lang_code`),
@@ -2673,15 +2682,15 @@ ALTER TABLE `ljjbw_languages`
   ADD KEY `idx_ordering` (`ordering`);
 
 --
--- Indexes for table `ljjbw_mail_templates`
+-- Indexes for table `twp7l_mail_templates`
 --
-ALTER TABLE `ljjbw_mail_templates`
+ALTER TABLE `twp7l_mail_templates`
   ADD PRIMARY KEY (`template_id`,`language`);
 
 --
--- Indexes for table `ljjbw_menu`
+-- Indexes for table `twp7l_menu`
 --
-ALTER TABLE `ljjbw_menu`
+ALTER TABLE `twp7l_menu`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `idx_client_id_parent_id_alias_language` (`client_id`,`parent_id`,`alias`(100),`language`),
   ADD KEY `idx_componentid` (`component_id`,`menutype`,`published`,`access`),
@@ -2692,44 +2701,44 @@ ALTER TABLE `ljjbw_menu`
   ADD KEY `idx_language` (`language`);
 
 --
--- Indexes for table `ljjbw_menu_types`
+-- Indexes for table `twp7l_menu_types`
 --
-ALTER TABLE `ljjbw_menu_types`
+ALTER TABLE `twp7l_menu_types`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `idx_menutype` (`menutype`);
 
 --
--- Indexes for table `ljjbw_messages`
+-- Indexes for table `twp7l_messages`
 --
-ALTER TABLE `ljjbw_messages`
+ALTER TABLE `twp7l_messages`
   ADD PRIMARY KEY (`message_id`),
   ADD KEY `useridto_state` (`user_id_to`,`state`);
 
 --
--- Indexes for table `ljjbw_messages_cfg`
+-- Indexes for table `twp7l_messages_cfg`
 --
-ALTER TABLE `ljjbw_messages_cfg`
+ALTER TABLE `twp7l_messages_cfg`
   ADD UNIQUE KEY `idx_user_var_name` (`user_id`,`cfg_name`);
 
 --
--- Indexes for table `ljjbw_modules`
+-- Indexes for table `twp7l_modules`
 --
-ALTER TABLE `ljjbw_modules`
+ALTER TABLE `twp7l_modules`
   ADD PRIMARY KEY (`id`),
   ADD KEY `published` (`published`,`access`),
   ADD KEY `newsfeeds` (`module`,`published`),
   ADD KEY `idx_language` (`language`);
 
 --
--- Indexes for table `ljjbw_modules_menu`
+-- Indexes for table `twp7l_modules_menu`
 --
-ALTER TABLE `ljjbw_modules_menu`
+ALTER TABLE `twp7l_modules_menu`
   ADD PRIMARY KEY (`moduleid`,`menuid`);
 
 --
--- Indexes for table `ljjbw_newsfeeds`
+-- Indexes for table `twp7l_newsfeeds`
 --
-ALTER TABLE `ljjbw_newsfeeds`
+ALTER TABLE `twp7l_newsfeeds`
   ADD PRIMARY KEY (`id`),
   ADD KEY `idx_access` (`access`),
   ADD KEY `idx_checkout` (`checked_out`),
@@ -2739,42 +2748,42 @@ ALTER TABLE `ljjbw_newsfeeds`
   ADD KEY `idx_language` (`language`);
 
 --
--- Indexes for table `ljjbw_overrider`
+-- Indexes for table `twp7l_overrider`
 --
-ALTER TABLE `ljjbw_overrider`
+ALTER TABLE `twp7l_overrider`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `ljjbw_postinstall_messages`
+-- Indexes for table `twp7l_postinstall_messages`
 --
-ALTER TABLE `ljjbw_postinstall_messages`
+ALTER TABLE `twp7l_postinstall_messages`
   ADD PRIMARY KEY (`postinstall_message_id`);
 
 --
--- Indexes for table `ljjbw_privacy_consents`
+-- Indexes for table `twp7l_privacy_consents`
 --
-ALTER TABLE `ljjbw_privacy_consents`
+ALTER TABLE `twp7l_privacy_consents`
   ADD PRIMARY KEY (`id`),
   ADD KEY `idx_user_id` (`user_id`);
 
 --
--- Indexes for table `ljjbw_privacy_requests`
+-- Indexes for table `twp7l_privacy_requests`
 --
-ALTER TABLE `ljjbw_privacy_requests`
+ALTER TABLE `twp7l_privacy_requests`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `ljjbw_redirect_links`
+-- Indexes for table `twp7l_redirect_links`
 --
-ALTER TABLE `ljjbw_redirect_links`
+ALTER TABLE `twp7l_redirect_links`
   ADD PRIMARY KEY (`id`),
   ADD KEY `idx_old_url` (`old_url`(100)),
   ADD KEY `idx_link_modified` (`modified_date`);
 
 --
--- Indexes for table `ljjbw_scheduler_tasks`
+-- Indexes for table `twp7l_scheduler_tasks`
 --
-ALTER TABLE `ljjbw_scheduler_tasks`
+ALTER TABLE `twp7l_scheduler_tasks`
   ADD PRIMARY KEY (`id`),
   ADD KEY `idx_type` (`type`),
   ADD KEY `idx_state` (`state`),
@@ -2786,24 +2795,24 @@ ALTER TABLE `ljjbw_scheduler_tasks`
   ADD KEY `idx_checked_out` (`checked_out`);
 
 --
--- Indexes for table `ljjbw_schemas`
+-- Indexes for table `twp7l_schemas`
 --
-ALTER TABLE `ljjbw_schemas`
+ALTER TABLE `twp7l_schemas`
   ADD PRIMARY KEY (`extension_id`,`version_id`);
 
 --
--- Indexes for table `ljjbw_session`
+-- Indexes for table `twp7l_session`
 --
-ALTER TABLE `ljjbw_session`
+ALTER TABLE `twp7l_session`
   ADD PRIMARY KEY (`session_id`),
   ADD KEY `userid` (`userid`),
   ADD KEY `time` (`time`),
   ADD KEY `client_id_guest` (`client_id`,`guest`);
 
 --
--- Indexes for table `ljjbw_tags`
+-- Indexes for table `twp7l_tags`
 --
-ALTER TABLE `ljjbw_tags`
+ALTER TABLE `twp7l_tags`
   ADD PRIMARY KEY (`id`),
   ADD KEY `tag_idx` (`published`,`access`),
   ADD KEY `idx_access` (`access`),
@@ -2814,35 +2823,35 @@ ALTER TABLE `ljjbw_tags`
   ADD KEY `idx_language` (`language`);
 
 --
--- Indexes for table `ljjbw_template_overrides`
+-- Indexes for table `twp7l_template_overrides`
 --
-ALTER TABLE `ljjbw_template_overrides`
+ALTER TABLE `twp7l_template_overrides`
   ADD PRIMARY KEY (`id`),
   ADD KEY `idx_template` (`template`),
   ADD KEY `idx_extension_id` (`extension_id`);
 
 --
--- Indexes for table `ljjbw_template_styles`
+-- Indexes for table `twp7l_template_styles`
 --
-ALTER TABLE `ljjbw_template_styles`
+ALTER TABLE `twp7l_template_styles`
   ADD PRIMARY KEY (`id`),
   ADD KEY `idx_template` (`template`),
   ADD KEY `idx_client_id` (`client_id`),
   ADD KEY `idx_client_id_home` (`client_id`,`home`);
 
 --
--- Indexes for table `ljjbw_ucm_base`
+-- Indexes for table `twp7l_ucm_base`
 --
-ALTER TABLE `ljjbw_ucm_base`
+ALTER TABLE `twp7l_ucm_base`
   ADD PRIMARY KEY (`ucm_id`),
   ADD KEY `idx_ucm_item_id` (`ucm_item_id`),
   ADD KEY `idx_ucm_type_id` (`ucm_type_id`),
   ADD KEY `idx_ucm_language_id` (`ucm_language_id`);
 
 --
--- Indexes for table `ljjbw_ucm_content`
+-- Indexes for table `twp7l_ucm_content`
 --
-ALTER TABLE `ljjbw_ucm_content`
+ALTER TABLE `twp7l_ucm_content`
   ADD PRIMARY KEY (`core_content_id`),
   ADD KEY `tag_idx` (`core_state`,`core_access`),
   ADD KEY `idx_access` (`core_access`),
@@ -2858,27 +2867,27 @@ ALTER TABLE `ljjbw_ucm_content`
   ADD KEY `idx_core_type_id` (`core_type_id`);
 
 --
--- Indexes for table `ljjbw_updates`
+-- Indexes for table `twp7l_updates`
 --
-ALTER TABLE `ljjbw_updates`
+ALTER TABLE `twp7l_updates`
   ADD PRIMARY KEY (`update_id`);
 
 --
--- Indexes for table `ljjbw_update_sites`
+-- Indexes for table `twp7l_update_sites`
 --
-ALTER TABLE `ljjbw_update_sites`
+ALTER TABLE `twp7l_update_sites`
   ADD PRIMARY KEY (`update_site_id`);
 
 --
--- Indexes for table `ljjbw_update_sites_extensions`
+-- Indexes for table `twp7l_update_sites_extensions`
 --
-ALTER TABLE `ljjbw_update_sites_extensions`
+ALTER TABLE `twp7l_update_sites_extensions`
   ADD PRIMARY KEY (`update_site_id`,`extension_id`);
 
 --
--- Indexes for table `ljjbw_usergroups`
+-- Indexes for table `twp7l_usergroups`
 --
-ALTER TABLE `ljjbw_usergroups`
+ALTER TABLE `twp7l_usergroups`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `idx_usergroup_parent_title_lookup` (`parent_id`,`title`),
   ADD KEY `idx_usergroup_title_lookup` (`title`),
@@ -2886,9 +2895,9 @@ ALTER TABLE `ljjbw_usergroups`
   ADD KEY `idx_usergroup_nested_set_lookup` (`lft`,`rgt`) USING BTREE;
 
 --
--- Indexes for table `ljjbw_users`
+-- Indexes for table `twp7l_users`
 --
-ALTER TABLE `ljjbw_users`
+ALTER TABLE `twp7l_users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `idx_username` (`username`),
   ADD KEY `idx_name` (`name`(100)),
@@ -2896,58 +2905,58 @@ ALTER TABLE `ljjbw_users`
   ADD KEY `email` (`email`);
 
 --
--- Indexes for table `ljjbw_user_keys`
+-- Indexes for table `twp7l_user_keys`
 --
-ALTER TABLE `ljjbw_user_keys`
+ALTER TABLE `twp7l_user_keys`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `series` (`series`),
   ADD KEY `user_id` (`user_id`);
 
 --
--- Indexes for table `ljjbw_user_mfa`
+-- Indexes for table `twp7l_user_mfa`
 --
-ALTER TABLE `ljjbw_user_mfa`
+ALTER TABLE `twp7l_user_mfa`
   ADD PRIMARY KEY (`id`),
   ADD KEY `idx_user_id` (`user_id`);
 
 --
--- Indexes for table `ljjbw_user_notes`
+-- Indexes for table `twp7l_user_notes`
 --
-ALTER TABLE `ljjbw_user_notes`
+ALTER TABLE `twp7l_user_notes`
   ADD PRIMARY KEY (`id`),
   ADD KEY `idx_user_id` (`user_id`),
   ADD KEY `idx_category_id` (`catid`);
 
 --
--- Indexes for table `ljjbw_user_profiles`
+-- Indexes for table `twp7l_user_profiles`
 --
-ALTER TABLE `ljjbw_user_profiles`
+ALTER TABLE `twp7l_user_profiles`
   ADD UNIQUE KEY `idx_user_id_profile_key` (`user_id`,`profile_key`);
 
 --
--- Indexes for table `ljjbw_user_usergroup_map`
+-- Indexes for table `twp7l_user_usergroup_map`
 --
-ALTER TABLE `ljjbw_user_usergroup_map`
+ALTER TABLE `twp7l_user_usergroup_map`
   ADD PRIMARY KEY (`user_id`,`group_id`);
 
 --
--- Indexes for table `ljjbw_viewlevels`
+-- Indexes for table `twp7l_viewlevels`
 --
-ALTER TABLE `ljjbw_viewlevels`
+ALTER TABLE `twp7l_viewlevels`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `idx_assetgroup_title_lookup` (`title`);
 
 --
--- Indexes for table `ljjbw_webauthn_credentials`
+-- Indexes for table `twp7l_webauthn_credentials`
 --
-ALTER TABLE `ljjbw_webauthn_credentials`
+ALTER TABLE `twp7l_webauthn_credentials`
   ADD PRIMARY KEY (`id`(100)),
   ADD KEY `user_id` (`user_id`(100));
 
 --
--- Indexes for table `ljjbw_workflows`
+-- Indexes for table `twp7l_workflows`
 --
-ALTER TABLE `ljjbw_workflows`
+ALTER TABLE `twp7l_workflows`
   ADD PRIMARY KEY (`id`),
   ADD KEY `idx_asset_id` (`asset_id`),
   ADD KEY `idx_title` (`title`(191)),
@@ -2960,9 +2969,9 @@ ALTER TABLE `ljjbw_workflows`
   ADD KEY `idx_checked_out` (`checked_out`);
 
 --
--- Indexes for table `ljjbw_workflow_associations`
+-- Indexes for table `twp7l_workflow_associations`
 --
-ALTER TABLE `ljjbw_workflow_associations`
+ALTER TABLE `twp7l_workflow_associations`
   ADD PRIMARY KEY (`item_id`,`extension`),
   ADD KEY `idx_item_stage_extension` (`item_id`,`stage_id`,`extension`),
   ADD KEY `idx_item_id` (`item_id`),
@@ -2970,9 +2979,9 @@ ALTER TABLE `ljjbw_workflow_associations`
   ADD KEY `idx_extension` (`extension`);
 
 --
--- Indexes for table `ljjbw_workflow_stages`
+-- Indexes for table `twp7l_workflow_stages`
 --
-ALTER TABLE `ljjbw_workflow_stages`
+ALTER TABLE `twp7l_workflow_stages`
   ADD PRIMARY KEY (`id`),
   ADD KEY `idx_workflow_id` (`workflow_id`),
   ADD KEY `idx_checked_out` (`checked_out`),
@@ -2981,9 +2990,9 @@ ALTER TABLE `ljjbw_workflow_stages`
   ADD KEY `idx_default` (`default`);
 
 --
--- Indexes for table `ljjbw_workflow_transitions`
+-- Indexes for table `twp7l_workflow_transitions`
 --
-ALTER TABLE `ljjbw_workflow_transitions`
+ALTER TABLE `twp7l_workflow_transitions`
   ADD PRIMARY KEY (`id`),
   ADD KEY `idx_title` (`title`(191)),
   ADD KEY `idx_asset_id` (`asset_id`),
@@ -2997,279 +3006,279 @@ ALTER TABLE `ljjbw_workflow_transitions`
 --
 
 --
--- AUTO_INCREMENT for table `ljjbw_action_logs`
+-- AUTO_INCREMENT for table `twp7l_action_logs`
 --
-ALTER TABLE `ljjbw_action_logs`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+ALTER TABLE `twp7l_action_logs`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `ljjbw_action_logs_extensions`
+-- AUTO_INCREMENT for table `twp7l_action_logs_extensions`
 --
-ALTER TABLE `ljjbw_action_logs_extensions`
+ALTER TABLE `twp7l_action_logs_extensions`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
--- AUTO_INCREMENT for table `ljjbw_action_log_config`
+-- AUTO_INCREMENT for table `twp7l_action_log_config`
 --
-ALTER TABLE `ljjbw_action_log_config`
+ALTER TABLE `twp7l_action_log_config`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
--- AUTO_INCREMENT for table `ljjbw_assets`
+-- AUTO_INCREMENT for table `twp7l_assets`
 --
-ALTER TABLE `ljjbw_assets`
+ALTER TABLE `twp7l_assets`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Primary Key', AUTO_INCREMENT=91;
 
 --
--- AUTO_INCREMENT for table `ljjbw_banners`
+-- AUTO_INCREMENT for table `twp7l_banners`
 --
-ALTER TABLE `ljjbw_banners`
+ALTER TABLE `twp7l_banners`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `ljjbw_banner_clients`
+-- AUTO_INCREMENT for table `twp7l_banner_clients`
 --
-ALTER TABLE `ljjbw_banner_clients`
+ALTER TABLE `twp7l_banner_clients`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `ljjbw_categories`
+-- AUTO_INCREMENT for table `twp7l_categories`
 --
-ALTER TABLE `ljjbw_categories`
+ALTER TABLE `twp7l_categories`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT for table `ljjbw_contact_details`
+-- AUTO_INCREMENT for table `twp7l_contact_details`
 --
-ALTER TABLE `ljjbw_contact_details`
+ALTER TABLE `twp7l_contact_details`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `ljjbw_content`
+-- AUTO_INCREMENT for table `twp7l_content`
 --
-ALTER TABLE `ljjbw_content`
+ALTER TABLE `twp7l_content`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `ljjbw_content_types`
+-- AUTO_INCREMENT for table `twp7l_content_types`
 --
-ALTER TABLE `ljjbw_content_types`
+ALTER TABLE `twp7l_content_types`
   MODIFY `type_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10000;
 
 --
--- AUTO_INCREMENT for table `ljjbw_extensions`
+-- AUTO_INCREMENT for table `twp7l_extensions`
 --
-ALTER TABLE `ljjbw_extensions`
+ALTER TABLE `twp7l_extensions`
   MODIFY `extension_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=229;
 
 --
--- AUTO_INCREMENT for table `ljjbw_fields`
+-- AUTO_INCREMENT for table `twp7l_fields`
 --
-ALTER TABLE `ljjbw_fields`
+ALTER TABLE `twp7l_fields`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `ljjbw_fields_groups`
+-- AUTO_INCREMENT for table `twp7l_fields_groups`
 --
-ALTER TABLE `ljjbw_fields_groups`
+ALTER TABLE `twp7l_fields_groups`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `ljjbw_finder_filters`
+-- AUTO_INCREMENT for table `twp7l_finder_filters`
 --
-ALTER TABLE `ljjbw_finder_filters`
+ALTER TABLE `twp7l_finder_filters`
   MODIFY `filter_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `ljjbw_finder_links`
+-- AUTO_INCREMENT for table `twp7l_finder_links`
 --
-ALTER TABLE `ljjbw_finder_links`
+ALTER TABLE `twp7l_finder_links`
   MODIFY `link_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `ljjbw_finder_taxonomy`
+-- AUTO_INCREMENT for table `twp7l_finder_taxonomy`
 --
-ALTER TABLE `ljjbw_finder_taxonomy`
+ALTER TABLE `twp7l_finder_taxonomy`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `ljjbw_finder_terms`
+-- AUTO_INCREMENT for table `twp7l_finder_terms`
 --
-ALTER TABLE `ljjbw_finder_terms`
+ALTER TABLE `twp7l_finder_terms`
   MODIFY `term_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `ljjbw_finder_types`
+-- AUTO_INCREMENT for table `twp7l_finder_types`
 --
-ALTER TABLE `ljjbw_finder_types`
+ALTER TABLE `twp7l_finder_types`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `ljjbw_history`
+-- AUTO_INCREMENT for table `twp7l_history`
 --
-ALTER TABLE `ljjbw_history`
+ALTER TABLE `twp7l_history`
   MODIFY `version_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `ljjbw_languages`
+-- AUTO_INCREMENT for table `twp7l_languages`
 --
-ALTER TABLE `ljjbw_languages`
+ALTER TABLE `twp7l_languages`
   MODIFY `lang_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `ljjbw_menu`
+-- AUTO_INCREMENT for table `twp7l_menu`
 --
-ALTER TABLE `ljjbw_menu`
+ALTER TABLE `twp7l_menu`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
 
 --
--- AUTO_INCREMENT for table `ljjbw_menu_types`
+-- AUTO_INCREMENT for table `twp7l_menu_types`
 --
-ALTER TABLE `ljjbw_menu_types`
+ALTER TABLE `twp7l_menu_types`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `ljjbw_messages`
+-- AUTO_INCREMENT for table `twp7l_messages`
 --
-ALTER TABLE `ljjbw_messages`
+ALTER TABLE `twp7l_messages`
   MODIFY `message_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `ljjbw_modules`
+-- AUTO_INCREMENT for table `twp7l_modules`
 --
-ALTER TABLE `ljjbw_modules`
+ALTER TABLE `twp7l_modules`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=109;
 
 --
--- AUTO_INCREMENT for table `ljjbw_newsfeeds`
+-- AUTO_INCREMENT for table `twp7l_newsfeeds`
 --
-ALTER TABLE `ljjbw_newsfeeds`
+ALTER TABLE `twp7l_newsfeeds`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `ljjbw_overrider`
+-- AUTO_INCREMENT for table `twp7l_overrider`
 --
-ALTER TABLE `ljjbw_overrider`
+ALTER TABLE `twp7l_overrider`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Primary Key';
 
 --
--- AUTO_INCREMENT for table `ljjbw_postinstall_messages`
+-- AUTO_INCREMENT for table `twp7l_postinstall_messages`
 --
-ALTER TABLE `ljjbw_postinstall_messages`
+ALTER TABLE `twp7l_postinstall_messages`
   MODIFY `postinstall_message_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `ljjbw_privacy_consents`
+-- AUTO_INCREMENT for table `twp7l_privacy_consents`
 --
-ALTER TABLE `ljjbw_privacy_consents`
+ALTER TABLE `twp7l_privacy_consents`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `ljjbw_privacy_requests`
+-- AUTO_INCREMENT for table `twp7l_privacy_requests`
 --
-ALTER TABLE `ljjbw_privacy_requests`
+ALTER TABLE `twp7l_privacy_requests`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `ljjbw_redirect_links`
+-- AUTO_INCREMENT for table `twp7l_redirect_links`
 --
-ALTER TABLE `ljjbw_redirect_links`
+ALTER TABLE `twp7l_redirect_links`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `ljjbw_scheduler_tasks`
+-- AUTO_INCREMENT for table `twp7l_scheduler_tasks`
 --
-ALTER TABLE `ljjbw_scheduler_tasks`
+ALTER TABLE `twp7l_scheduler_tasks`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `ljjbw_tags`
+-- AUTO_INCREMENT for table `twp7l_tags`
 --
-ALTER TABLE `ljjbw_tags`
+ALTER TABLE `twp7l_tags`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `ljjbw_template_overrides`
+-- AUTO_INCREMENT for table `twp7l_template_overrides`
 --
-ALTER TABLE `ljjbw_template_overrides`
+ALTER TABLE `twp7l_template_overrides`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `ljjbw_template_styles`
+-- AUTO_INCREMENT for table `twp7l_template_styles`
 --
-ALTER TABLE `ljjbw_template_styles`
+ALTER TABLE `twp7l_template_styles`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT for table `ljjbw_ucm_content`
+-- AUTO_INCREMENT for table `twp7l_ucm_content`
 --
-ALTER TABLE `ljjbw_ucm_content`
+ALTER TABLE `twp7l_ucm_content`
   MODIFY `core_content_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `ljjbw_updates`
+-- AUTO_INCREMENT for table `twp7l_updates`
 --
-ALTER TABLE `ljjbw_updates`
-  MODIFY `update_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=148;
+ALTER TABLE `twp7l_updates`
+  MODIFY `update_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
--- AUTO_INCREMENT for table `ljjbw_update_sites`
+-- AUTO_INCREMENT for table `twp7l_update_sites`
 --
-ALTER TABLE `ljjbw_update_sites`
+ALTER TABLE `twp7l_update_sites`
   MODIFY `update_site_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `ljjbw_usergroups`
+-- AUTO_INCREMENT for table `twp7l_usergroups`
 --
-ALTER TABLE `ljjbw_usergroups`
+ALTER TABLE `twp7l_usergroups`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Primary Key', AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT for table `ljjbw_users`
+-- AUTO_INCREMENT for table `twp7l_users`
 --
-ALTER TABLE `ljjbw_users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=486;
+ALTER TABLE `twp7l_users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=594;
 
 --
--- AUTO_INCREMENT for table `ljjbw_user_keys`
+-- AUTO_INCREMENT for table `twp7l_user_keys`
 --
-ALTER TABLE `ljjbw_user_keys`
+ALTER TABLE `twp7l_user_keys`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `ljjbw_user_mfa`
+-- AUTO_INCREMENT for table `twp7l_user_mfa`
 --
-ALTER TABLE `ljjbw_user_mfa`
+ALTER TABLE `twp7l_user_mfa`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `ljjbw_user_notes`
+-- AUTO_INCREMENT for table `twp7l_user_notes`
 --
-ALTER TABLE `ljjbw_user_notes`
+ALTER TABLE `twp7l_user_notes`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `ljjbw_viewlevels`
+-- AUTO_INCREMENT for table `twp7l_viewlevels`
 --
-ALTER TABLE `ljjbw_viewlevels`
+ALTER TABLE `twp7l_viewlevels`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Primary Key', AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `ljjbw_workflows`
+-- AUTO_INCREMENT for table `twp7l_workflows`
 --
-ALTER TABLE `ljjbw_workflows`
+ALTER TABLE `twp7l_workflows`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `ljjbw_workflow_stages`
+-- AUTO_INCREMENT for table `twp7l_workflow_stages`
 --
-ALTER TABLE `ljjbw_workflow_stages`
+ALTER TABLE `twp7l_workflow_stages`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `ljjbw_workflow_transitions`
+-- AUTO_INCREMENT for table `twp7l_workflow_transitions`
 --
-ALTER TABLE `ljjbw_workflow_transitions`
+ALTER TABLE `twp7l_workflow_transitions`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
